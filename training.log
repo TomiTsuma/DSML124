@@ -1,0 +1,147 @@
+INFO:root:Training for aluminium
+INFO:root:Loading model for aluminium
+INFO:root:Training for aluminium
+INFO:root:Converted df to arrays
+INFO:root:Normalization of pcc1
+INFO:root:Normalization of pcc3
+INFO:root:Prediction of pcc1
+INFO:root:Prediction of pcc3
+INFO:root:Denormalization of pcc1
+INFO:root:Denormalization of pcc3
+INFO:root:Saving reconstruted spc
+INFO:root:Loading model for phosphorus
+INFO:root:Training for phosphorus
+INFO:root:Converted df to arrays
+INFO:root:Normalization of pcc1
+INFO:root:Normalization of pcc3
+INFO:root:Prediction of pcc1
+INFO:root:Prediction of pcc3
+INFO:root:Denormalization of pcc1
+INFO:tensorflow:Assets written to: outputFiles/models/aluminium\assets
+INFO:root:Loading model for aluminium
+INFO:root:Training for aluminium
+INFO:root:Converted df to arrays
+INFO:root:Normalization of pcc1
+INFO:root:Normalization of pcc3
+INFO:root:Prediction of pcc1
+INFO:root:Prediction of pcc3
+INFO:root:Denormalization of pcc1
+INFO:root:Denormalization of pcc3
+INFO:root:Saving reconstruted spc
+INFO:tensorflow:Assets written to: outputFiles/models/phosphorus\assets
+INFO:root:Loading model for phosphorus
+INFO:root:Training for phosphorus
+INFO:root:Converted df to arrays
+INFO:root:Normalization of pcc1
+INFO:root:Normalization of pcc3
+INFO:root:Prediction of pcc1
+INFO:root:Prediction of pcc3
+INFO:root:Denormalization of pcc1
+INFO:tensorflow:Assets written to: outputFiles/models/exchangeable_acidity\assets
+INFO:tensorflow:Assets written to: outputFiles/models/calcium\assets
+INFO:tensorflow:Assets written to: outputFiles/models/magnesium\assets
+INFO:tensorflow:Assets written to: outputFiles/models/sulphur\assets
+INFO:tensorflow:Assets written to: outputFiles/models/sodium\assets
+INFO:tensorflow:Assets written to: outputFiles/models/iron\assets
+INFO:tensorflow:Assets written to: outputFiles/models/manganese\assets
+INFO:tensorflow:Assets written to: outputFiles/models/boron\assets
+INFO:tensorflow:Assets written to: outputFiles/models/copper\assets
+INFO:tensorflow:Assets written to: outputFiles/models/zinc\assets
+INFO:tensorflow:Assets written to: outputFiles/models/total_nitrogen\assets
+INFO:tensorflow:Assets written to: outputFiles/models/potassium\assets
+INFO:tensorflow:Assets written to: outputFiles/models/ec_salts\assets
+INFO:tensorflow:Assets written to: outputFiles/models/organic_carbon\assets
+INFO:tensorflow:Assets written to: outputFiles/models/cec\assets
+INFO:tensorflow:Assets written to: outputFiles/models/sand\assets
+INFO:tensorflow:Assets written to: outputFiles/models/silt\assets
+INFO:tensorflow:Assets written to: outputFiles/models/clay\assets
+INFO:root:Loading model for aluminium
+INFO:root:Training for aluminium
+INFO:root:Converted df to arrays
+INFO:root:Normalization of pcc1
+INFO:root:Normalization of pcc3
+INFO:root:Prediction of pcc1
+INFO:root:Prediction of pcc3
+INFO:root:Denormalization of pcc1
+INFO:root:Denormalization of pcc3
+INFO:root:Saving reconstruted spc
+INFO:root:Loading model for phosphorus
+INFO:root:Training for phosphorus
+INFO:root:Converted df to arrays
+INFO:root:Normalization of pcc1
+INFO:root:Normalization of pcc3
+INFO:root:Prediction of pcc1
+INFO:root:Prediction of pcc3
+INFO:root:Denormalization of pcc1
+INFO:root:Denormalization of pcc3
+INFO:root:Saving reconstruted spc
+INFO:root:Loading model for exchangeable_acidity
+INFO:root:Training for exchangeable_acidity
+INFO:root:Converted df to arrays
+INFO:root:Normalization of pcc1
+INFO:root:Normalization of pcc3
+INFO:root:Prediction of pcc1
+INFO:root:Prediction of pcc3
+INFO:root:Denormalization of pcc1
+INFO:root:Denormalization of pcc3
+INFO:root:Saving reconstruted spc
+INFO:root:Loading model for calcium
+INFO:root:Training for calcium
+INFO:root:Converted df to arrays
+INFO:root:Normalization of pcc1
+INFO:root:Normalization of pcc3
+INFO:root:Prediction of pcc1
+INFO:root:Prediction of pcc3
+INFO:root:Denormalization of pcc1
+INFO:root:Denormalization of pcc3
+INFO:root:Saving reconstruted spc
+INFO:root:Loading model for magnesium
+INFO:root:Training for magnesium
+INFO:root:Converted df to arrays
+INFO:root:Normalization of pcc1
+INFO:root:Normalization of pcc3
+INFO:root:Prediction of pcc1
+INFO:root:Prediction of pcc3
+INFO:root:Denormalization of pcc1
+INFO:root:Denormalization of pcc3
+INFO:root:Saving reconstruted spc
+INFO:root:Loading model for sulphur
+INFO:root:Training for sulphur
+INFO:root:Converted df to arrays
+INFO:root:Normalization of pcc1
+INFO:root:Normalization of pcc3
+INFO:root:Prediction of pcc1
+INFO:root:Prediction of pcc3
+INFO:root:Denormalization of pcc1
+INFO:root:Loading model for sulphur
+INFO:root:Training for sulphur
+INFO:root:Converted df to arrays
+INFO:root:Normalization of pcc1
+INFO:root:Normalization of pcc3
+INFO:root:Prediction of pcc1
+INFO:root:Loading model for sulphur
+INFO:root:Training for sulphur
+INFO:root:Converted df to arrays
+INFO:root:Normalization of pcc1
+INFO:root:Normalization of pcc3
+INFO:root:Prediction of pcc1
+INFO:root:Prediction of pcc3
+INFO:root:Denormalization of pcc1
+INFO:root:Loading model for aluminium
+INFO:root:Training for aluminium
+INFO:root:Converted df to arrays
+INFO:root:Normalization of pcc1
+INFO:root:Normalization of pcc3
+INFO:root:Prediction of pcc1
+INFO:root:Prediction of pcc3
+INFO:root:Denormalization of pcc1
+INFO:root:Loading model for aluminium
+INFO:root:Training for aluminium
+INFO:root:Converted df to arrays
+INFO:root:Normalization of pcc1
+INFO:root:Normalization of pcc3
+INFO:root:Prediction of pcc1
+INFO:root:Prediction of pcc3
+INFO:root:Denormalization of pcc1
+INFO:root:Denormalization of pcc3
+INFO:root:Saving reconstruted spc
