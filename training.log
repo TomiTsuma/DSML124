@@ -145,3 +145,493 @@ INFO:root:Prediction of pcc3
 INFO:root:Denormalization of pcc1
 INFO:root:Denormalization of pcc3
 INFO:root:Saving reconstruted spc
+INFO:rpy2.situation:cffi mode is CFFI_MODE.ANY
+INFO:rpy2.situation:R home found: C:\Program Files\R\R-4.2.2
+INFO:rpy2.rinterface_lib.embedded:Default options to initialize R: rpy2, --quiet, --no-save
+INFO:rpy2.situation:cffi mode is CFFI_MODE.ANY
+INFO:rpy2.situation:R home found: C:\Program Files\R\R-4.2.2
+INFO:rpy2.rinterface_lib.embedded:Default options to initialize R: rpy2, --quiet, --no-save
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: [34mprospectr version 0.2.6 -- [39m'chicago'
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: [34mcheck the github repository at: https://github.com/l-ramirez-lopez/prospectr/[39m
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: data.table 1.14.6 using 4 threads (see ?getDTthreads).  Latest news: r-datatable.com
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: Need help? Try Stackoverflow: https://stackoverflow.com/tags/ggplot2
+
+INFO:rpy2.situation:cffi mode is CFFI_MODE.ANY
+INFO:rpy2.situation:R home found: C:\Program Files\R\R-4.2.2
+INFO:rpy2.rinterface_lib.embedded:Default options to initialize R: rpy2, --quiet, --no-save
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: [34mprospectr version 0.2.6 -- [39m'chicago'
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: [34mcheck the github repository at: https://github.com/l-ramirez-lopez/prospectr/[39m
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: data.table 1.14.6 using 4 threads (see ?getDTthreads).  Latest news: r-datatable.com
+
+INFO:rpy2.situation:cffi mode is CFFI_MODE.ANY
+INFO:rpy2.situation:R home found: C:\Program Files\R\R-4.2.2
+INFO:rpy2.rinterface_lib.embedded:Default options to initialize R: rpy2, --quiet, --no-save
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: [34mprospectr version 0.2.6 -- [39m'chicago'
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: [34mcheck the github repository at: https://github.com/l-ramirez-lopez/prospectr/[39m
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: data.table 1.14.6 using 4 threads (see ?getDTthreads).  Latest news: r-datatable.com
+
+INFO:root:Loading model for aluminium
+INFO:root:Training for aluminium
+INFO:root:Converted df to arrays
+INFO:root:Normalization of pcc1
+INFO:root:Normalization of pcc3
+INFO:root:Prediction of pcc1
+INFO:root:Prediction of pcc3
+INFO:root:Denormalization of pcc1
+INFO:root:Denormalization of pcc3
+INFO:root:Saving reconstruted spc
+INFO:rpy2.situation:cffi mode is CFFI_MODE.ANY
+INFO:rpy2.situation:R home found: C:\Program Files\R\R-4.2.2
+INFO:rpy2.rinterface_lib.embedded:Default options to initialize R: rpy2, --quiet, --no-save
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: [34mprospectr version 0.2.6 -- [39m'chicago'
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: [34mcheck the github repository at: https://github.com/l-ramirez-lopez/prospectr/[39m
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: data.table 1.14.6 using 4 threads (see ?getDTthreads).  Latest news: r-datatable.com
+
+INFO:root:Loading model for aluminium
+INFO:root:Training for aluminium
+INFO:root:Converted df to arrays
+INFO:root:Normalization of pcc1
+INFO:root:Normalization of pcc3
+INFO:root:Prediction of pcc1
+INFO:root:Prediction of pcc3
+INFO:root:Denormalization of pcc1
+INFO:root:Denormalization of pcc3
+INFO:root:Saving reconstruted spc
+INFO:rpy2.situation:cffi mode is CFFI_MODE.ANY
+INFO:rpy2.situation:R home found: C:\Program Files\R\R-4.2.2
+INFO:rpy2.rinterface_lib.embedded:Default options to initialize R: rpy2, --quiet, --no-save
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: [34mprospectr version 0.2.6 -- [39m'chicago'
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: [34mcheck the github repository at: https://github.com/l-ramirez-lopez/prospectr/[39m
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: data.table 1.14.6 using 4 threads (see ?getDTthreads).  Latest news: r-datatable.com
+
+INFO:root:Loading model for aluminium
+INFO:root:Training for aluminium
+INFO:root:Converted df to arrays
+INFO:root:Normalization of pcc1
+INFO:root:Normalization of pcc3
+INFO:root:Prediction of pcc1
+INFO:root:Prediction of pcc3
+INFO:root:Denormalization of pcc1
+INFO:root:Denormalization of pcc3
+INFO:root:Saving reconstruted spc
+INFO:rpy2.situation:cffi mode is CFFI_MODE.ANY
+INFO:rpy2.situation:R home found: C:\Program Files\R\R-4.2.2
+INFO:rpy2.rinterface_lib.embedded:Default options to initialize R: rpy2, --quiet, --no-save
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: [34mprospectr version 0.2.6 -- [39m'chicago'
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: [34mcheck the github repository at: https://github.com/l-ramirez-lopez/prospectr/[39m
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: data.table 1.14.6 using 4 threads (see ?getDTthreads).  Latest news: r-datatable.com
+
+INFO:root:Loading model for aluminium
+INFO:root:Training for aluminium
+INFO:root:Converted df to arrays
+INFO:root:Normalization of pcc1
+INFO:root:Normalization of pcc3
+INFO:root:Prediction of pcc1
+INFO:root:Prediction of pcc3
+INFO:root:Denormalization of pcc1
+INFO:root:Denormalization of pcc3
+INFO:root:Saving reconstruted spc
+INFO:rpy2.situation:cffi mode is CFFI_MODE.ANY
+INFO:rpy2.situation:R home found: C:\Program Files\R\R-4.2.2
+INFO:rpy2.rinterface_lib.embedded:Default options to initialize R: rpy2, --quiet, --no-save
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: [34mprospectr version 0.2.6 -- [39m'chicago'
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: [34mcheck the github repository at: https://github.com/l-ramirez-lopez/prospectr/[39m
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: data.table 1.14.6 using 4 threads (see ?getDTthreads).  Latest news: r-datatable.com
+
+INFO:root:Loading model for aluminium
+INFO:root:Training for aluminium
+INFO:root:Converted df to arrays
+INFO:root:Normalization of pcc1
+INFO:root:Normalization of pcc3
+INFO:root:Prediction of pcc1
+INFO:root:Prediction of pcc3
+INFO:root:Denormalization of pcc1
+INFO:root:Denormalization of pcc3
+INFO:root:Saving reconstruted spc
+INFO:rpy2.situation:cffi mode is CFFI_MODE.ANY
+INFO:rpy2.situation:R home found: C:\Program Files\R\R-4.2.2
+INFO:rpy2.rinterface_lib.embedded:Default options to initialize R: rpy2, --quiet, --no-save
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: [34mprospectr version 0.2.6 -- [39m'chicago'
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: [34mcheck the github repository at: https://github.com/l-ramirez-lopez/prospectr/[39m
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: data.table 1.14.6 using 4 threads (see ?getDTthreads).  Latest news: r-datatable.com
+
+INFO:root:Loading model for aluminium
+INFO:root:Training for aluminium
+INFO:root:Converted df to arrays
+INFO:root:Normalization of pcc1
+INFO:root:Normalization of pcc3
+INFO:root:Prediction of pcc1
+INFO:root:Prediction of pcc3
+INFO:root:Denormalization of pcc1
+INFO:root:Denormalization of pcc3
+INFO:root:Saving reconstruted spc
+INFO:rpy2.situation:cffi mode is CFFI_MODE.ANY
+INFO:rpy2.situation:R home found: C:\Program Files\R\R-4.2.2
+INFO:rpy2.rinterface_lib.embedded:Default options to initialize R: rpy2, --quiet, --no-save
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: [34mprospectr version 0.2.6 -- [39m'chicago'
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: [34mcheck the github repository at: https://github.com/l-ramirez-lopez/prospectr/[39m
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: data.table 1.14.6 using 4 threads (see ?getDTthreads).  Latest news: r-datatable.com
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: Keep up to date with changes at https://www.tidyverse.org/blog/
+
+INFO:root:Loading model for aluminium
+INFO:root:Training for aluminium
+INFO:root:Converted df to arrays
+INFO:root:Normalization of pcc1
+INFO:root:Normalization of pcc3
+INFO:root:Prediction of pcc1
+INFO:root:Prediction of pcc3
+INFO:root:Denormalization of pcc1
+INFO:root:Denormalization of pcc3
+INFO:root:Saving reconstruted spc
+INFO:rpy2.situation:cffi mode is CFFI_MODE.ANY
+INFO:rpy2.situation:R home found: C:\Program Files\R\R-4.2.2
+INFO:rpy2.rinterface_lib.embedded:Default options to initialize R: rpy2, --quiet, --no-save
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: [34mprospectr version 0.2.6 -- [39m'chicago'
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: [34mcheck the github repository at: https://github.com/l-ramirez-lopez/prospectr/[39m
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: data.table 1.14.6 using 4 threads (see ?getDTthreads).  Latest news: r-datatable.com
+
+INFO:root:Loading model for aluminium
+INFO:root:Training for aluminium
+INFO:root:Converted df to arrays
+INFO:root:Normalization of pcc1
+INFO:root:Normalization of pcc3
+INFO:root:Prediction of pcc1
+INFO:root:Prediction of pcc3
+INFO:root:Denormalization of pcc1
+INFO:root:Denormalization of pcc3
+INFO:root:Saving reconstruted spc
+INFO:rpy2.situation:cffi mode is CFFI_MODE.ANY
+INFO:rpy2.situation:R home found: C:\Program Files\R\R-4.2.2
+INFO:rpy2.rinterface_lib.embedded:Default options to initialize R: rpy2, --quiet, --no-save
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: [34mprospectr version 0.2.6 -- [39m'chicago'
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: [34mcheck the github repository at: https://github.com/l-ramirez-lopez/prospectr/[39m
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: data.table 1.14.6 using 4 threads (see ?getDTthreads).  Latest news: r-datatable.com
+
+INFO:root:Loading model for aluminium
+INFO:root:Training for aluminium
+INFO:root:Converted df to arrays
+INFO:root:Normalization of pcc1
+INFO:root:Normalization of pcc3
+INFO:root:Prediction of pcc1
+INFO:root:Prediction of pcc3
+INFO:root:Denormalization of pcc1
+INFO:root:Denormalization of pcc3
+INFO:root:Saving reconstruted spc
+INFO:rpy2.situation:cffi mode is CFFI_MODE.ANY
+INFO:rpy2.situation:R home found: C:\Program Files\R\R-4.2.2
+INFO:rpy2.rinterface_lib.embedded:Default options to initialize R: rpy2, --quiet, --no-save
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: [34mprospectr version 0.2.6 -- [39m'chicago'
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: [34mcheck the github repository at: https://github.com/l-ramirez-lopez/prospectr/[39m
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: data.table 1.14.6 using 4 threads (see ?getDTthreads).  Latest news: r-datatable.com
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: Use suppressPackageStartupMessages() to eliminate package startup
+messages
+
+INFO:root:Loading model for boron
+INFO:rpy2.situation:cffi mode is CFFI_MODE.ANY
+INFO:rpy2.situation:R home found: C:\Program Files\R\R-4.2.2
+INFO:rpy2.rinterface_lib.embedded:Default options to initialize R: rpy2, --quiet, --no-save
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: [34mprospectr version 0.2.6 -- [39m'chicago'
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: [34mcheck the github repository at: https://github.com/l-ramirez-lopez/prospectr/[39m
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: data.table 1.14.6 using 4 threads (see ?getDTthreads).  Latest news: r-datatable.com
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: |--------------------------------------------------|
+|
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ============
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ====
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ====
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: |
+
+INFO:rpy2.situation:cffi mode is CFFI_MODE.ANY
+INFO:rpy2.situation:R home found: C:\Program Files\R\R-4.2.2
+INFO:rpy2.rinterface_lib.embedded:Default options to initialize R: rpy2, --quiet, --no-save
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: [34mprospectr version 0.2.6 -- [39m'chicago'
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: [34mcheck the github repository at: https://github.com/l-ramirez-lopez/prospectr/[39m
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: data.table 1.14.6 using 4 threads (see ?getDTthreads).  Latest news: r-datatable.com
+
+INFO:rpy2.situation:cffi mode is CFFI_MODE.ANY
+INFO:rpy2.situation:R home found: C:\Program Files\R\R-4.2.2
+INFO:rpy2.rinterface_lib.embedded:Default options to initialize R: rpy2, --quiet, --no-save
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: [34mprospectr version 0.2.6 -- [39m'chicago'
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: [34mcheck the github repository at: https://github.com/l-ramirez-lopez/prospectr/[39m
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: data.table 1.14.6 using 4 threads (see ?getDTthreads).  Latest news: r-datatable.com
+
+INFO:rpy2.situation:cffi mode is CFFI_MODE.ANY
+INFO:rpy2.situation:R home found: C:\Program Files\R\R-4.2.2
+INFO:rpy2.rinterface_lib.embedded:Default options to initialize R: rpy2, --quiet, --no-save
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: [34mprospectr version 0.2.6 -- [39m'chicago'
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: [34mcheck the github repository at: https://github.com/l-ramirez-lopez/prospectr/[39m
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: data.table 1.14.6 using 4 threads (see ?getDTthreads).  Latest news: r-datatable.com
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: |--------------------------------------------------|
+|
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: =======
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ==
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ==
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ==
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ==
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ==
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ==
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: =
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: |
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: 
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: |--------------------------------------------------|
+|
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ======
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ==
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ==
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ==
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ==
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ==
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ==
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ==
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ==
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ==
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ==
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: |
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: |--------------------------------------------------|
+|
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ======
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ==
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ==
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: 
+
+INFO:root:Loading model for magnesium
+INFO:root:Training for magnesium
+INFO:root:Converted df to arrays
+INFO:root:Normalization of pcc1
+INFO:root:Normalization of pcc3
+INFO:root:Prediction of pcc1
+INFO:root:Prediction of pcc3
+INFO:root:Denormalization of pcc1
+INFO:root:Denormalization of pcc3
+INFO:root:Saving reconstruted spc
+INFO:root:Loading model for sand
+INFO:root:Training for sand
+INFO:root:Converted df to arrays
+INFO:root:Normalization of pcc1
+INFO:root:Normalization of pcc3
+INFO:root:Loading model for sand
+INFO:root:Training for sand
+INFO:root:Converted df to arrays
+INFO:root:Normalization of pcc1
+INFO:root:Normalization of pcc3
+INFO:root:Prediction of pcc1
+INFO:root:Prediction of pcc2
+INFO:root:Denormalization of pcc1
+INFO:root:Denormalization of pcc3
+INFO:root:Saving reconstruted spc
+INFO:root:Loading model for sand
+INFO:root:Training for sand
+INFO:root:Converted df to arrays
+INFO:root:Normalization of pcc1
+INFO:root:Normalization of pcc3
+INFO:root:Prediction of pcc1
+INFO:root:Prediction of pcc2
+INFO:root:Denormalization of pcc1
+INFO:root:Denormalization of pcc3
+INFO:root:Saving reconstruted spc
+INFO:root:Loading model for magnesium
+INFO:root:Loading model for magnesium
+INFO:root:Training for magnesium
+INFO:root:Converted df to arrays
+INFO:root:Normalization of pcc1
+INFO:root:Normalization of pcc3
+INFO:root:Prediction of pcc1
+INFO:root:Prediction of pcc2
+INFO:root:Denormalization of pcc1
+INFO:root:Denormalization of pcc3
+INFO:root:Saving reconstruted spc
+INFO:root:Loading model for aluminium
+INFO:root:Training for aluminium
+INFO:root:Converted df to arrays
+INFO:root:Normalization of pcc1
+INFO:root:Normalization of pcc3
+INFO:root:Prediction of pcc1
+INFO:root:Prediction of pcc2
+INFO:root:Denormalization of pcc1
+INFO:root:Denormalization of pcc3
+INFO:root:Saving reconstruted spc
+INFO:root:Loading model for phosphorus
+INFO:root:Loading model for phosphorus
+INFO:root:Loading model for phosphorus
+INFO:root:Training for phosphorus
+INFO:root:Converted df to arrays
+INFO:root:Normalization of pcc1
+INFO:root:Normalization of pcc3
+INFO:root:Prediction of pcc1
+INFO:root:Prediction of pcc2
+INFO:root:Denormalization of pcc1
+INFO:root:Denormalization of pcc3
+INFO:root:Saving reconstruted spc
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: |--------------------------------------------------|
+|
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ======
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ==
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ==
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ==
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ==
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: |
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: Error: cannot allocate vector of size 930.5 Mb
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: |--------------------------------------------------|
+|
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: =======
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ==
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ==
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ==
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: =
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: |
+
+INFO:root:Loading model for ph
+INFO:root:Loading model for exchangeable_acidity
+INFO:root:Training for exchangeable_acidity
+INFO:root:Converted df to arrays
+INFO:root:Normalization of pcc1
+INFO:root:Normalization of pcc3
+INFO:root:Prediction of pcc1
+INFO:root:Prediction of pcc2
+INFO:root:Denormalization of pcc1
+INFO:root:Denormalization of pcc3
+INFO:root:Saving reconstruted spc
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: |--------------------------------------------------|
+|
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: =====
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ==
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ==
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ==
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ==
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ==
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ==
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ==
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ==
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ==
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: |
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: Error: cannot allocate vector of size 1.0 Gb
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: Error: cannot allocate vector of size 1.0 Gb
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: |--------------------------------------------------|
+|
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: =======
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ====
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: ===
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: |
+
+WARNING:rpy2.rinterface_lib.callbacks:R[write to console]: Error: cannot allocate vector of size 824.8 Mb
+

@@ -425,3 +425,15 @@ pcc<-function(element,boundaries,dat,reference,predicted,wepal,wepalinp,sav,loc,
   return(output)
   
 }
+
+
+chemicals <- c('boron', 'calcium', 'clay', 'copper', 'ec_salts',
+               'exchangeable_acidity', 'iron', 'magnesium', 'manganese', 'phosphorus',
+               'potassium', 'sand', 'silt', 'sodium', 'sulphur', 'zinc', 'ph')
+
+for (chem in chemicals) {
+  f <- paste("D://CropNutsDocuments/DSML124/outputFiles/PCC_Classes/",chem,".csv")
+  df <- as.data.frame(read.csv(file = f)))
+  bdr <- c(0.5,0.8,1.0)
+  pcc<-function(chem,bdr,df,1,2)
+}

@@ -17,7 +17,7 @@ def run(chemical):
     #     return
     # if(f"{chemical}.csv" not in os.listdir("outputFiles/PCC2")):
     #     return
-    df = pd.read_csv(f'outputFiles/PCC1/{chemical}.csv', index_col=0, engine='c')
+    df = pd.read_csv(f'outputFiles/PCC1/train/{chemical}.csv', index_col=0, engine='c')
     outlier_df = pd.read_csv(f'outputFiles/PCC3/{chemical}.csv', index_col=0, engine='c')
 
     outliers = np.array(outlier_df)
