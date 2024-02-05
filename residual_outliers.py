@@ -2,43 +2,8 @@ import pandas as pd
 import os
 import numpy as np
 from data import load_residual_outliers
-# import rpy2.robjects as robjects
-# r = robjects.r
-# r['source']('pcc_V1.7.r')
-# pcc = robjects.globalenv['pcc']
-# from rpy2.robjects import pandas2ri, numpy2ri
-# pandas2ri.activate()
-# numpy2ri.activate()
-
-# data = pd.read_csv('outputFiles/PCC_Classes/boron.csv', index_col=0)
-# pcc(
-#     "boron",
-#     numpy2ri.py2rpy(np.array([0.5,0.8,1])),
-#     pandas2ri.py2rpy(data),
-#     1,
-#     2
-#     )
 
 
-
-# uncleaned_wetchem_df = pd.read_csv("inputFiles/all_wetchem_data_uncleeaned_15-7-2022 (1).csv")
-# uncleaned_wetchem_df = uncleaned_wetchem_df.rename(columns={"Unnamed: 0":"sample_code"})
-# uncleaned_wetchem_df.set_index("sample_code")
-# for column in uncleaned_wetchem_df.columns:
-#     if(column != 'sample_code'):
-#         vals = []
-#         for value in uncleaned_wetchem_df[column].values:
-#             if(value is not None):
-#                 value = str(value)
-#                 value = value.replace(">","").replace("<","").replace("...","").strip()
-#                 value = float(value)
-#             vals.append(value)
-#         uncleaned_wetchem_df[column] = vals
-
-# wetchem_df = uncleaned_wetchem_df.copy(deep=True)
-# wetchem_df.set_index("sample_code")
-
-# wetchem_df.to_csv("inputFiles/cleaned_wetchem.csv")
 
 def residual_outliers(chems):
     print("Getting residual outliers for preds vs wetchem")
@@ -206,7 +171,7 @@ def residual_outliers_reconstructed(chems):
 
 
 
-def residual_outliers_reconstructed_wetchem():
+def residual_outliers_reconstructed_wetchem(chems):
     print("Getting residual outliers")
     os.makedirs("outputFiles/PCC1_Wetchem_Reconstructed", exist_ok=True)
     os.makedirs("outputFiles/PCC3_Wetchem_Reconstructed", exist_ok=True)
