@@ -6,6 +6,7 @@ import os
 from tensorflow.keras import Model, Sequential
 from tensorflow.keras.layers import Dense,Dropout, LSTM, RepeatVector, TimeDistributed, Flatten
 from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.callbacks import EarlyStopping
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 from torch import nn, optim
 import torch.nn.functional as F 
@@ -262,21 +263,49 @@ class AnomalyDetector(Model):
     decoded = self.decoder(encoded)
     return decoded
     
+def run_lstm_autoencoder(chemical):
+    df = pd.read_csv(f'outputFiles/PCC1/train/{chemical}.csv', index_col=0, engine='c')
+    model = lstm_autoencoder(np.array(df))
+    os.makedirs(f'models/{chemical}', exist_ok=True)
+    model.save(f'models/{chemical}', save_format='tf')
 
+    return 
 
 def lstm_autoencoder(X):
+    callbacks = []
+    earlystopping = EarlyStopping(monitor="val_loss",
+                                                     patience=75,
+                                                     min_delta=0,
+                                                     mode='min',
+                                                     restore_best_weights=False,
+                                                     baseline=None,
+                                                     verbose=0)
+    callbacks.append(earlystopping)
+
+    reduce_lr = tf.keras.callbacks.ReduceLROnPlateau(monitor='val_loss',
+                                                     factor=0.5,
+                                                     patience=10,
+                                                     min_lr=0.000001,
+                                                     cooldown=5)
+
+    callbacks.append(reduce_lr)
+
     n_in = len(X[0])
     model = Sequential()
     model.add(LSTM(100, activation='relu', input_shape=(n_in,1)))
     model.add(RepeatVector(n_in))
     model.add(LSTM(100, activation='relu', return_sequences=True))
     model.add(TimeDistributed(Dense(1)))
-    model.compile(optimizer='adam', loss='mae')
+    optimizer = Adam(clipvalue=3, learning_rate=0.00001, )
+    model.compile(optimizer=optimizer, loss='mse')
     model.fit(X,X,
-              epochs=20, 
-          batch_size=32,
+              epochs=2, 
           validation_data=(X, X),
+          callbacks=callbacks,
           shuffle=True)
+
 
     return model
     # model.predict(X)
+
+

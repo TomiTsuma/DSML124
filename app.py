@@ -6,7 +6,7 @@ import torch
 import pickle
 sys.path.append('D:\\CropNutsDocuments\\QC_Model_Predictions')
 from predict import predict_chems
-from autoencoder import run, denormalize, normalize, run_lstm, RecurrentAutoencoder
+from autoencoder import run, denormalize, normalize, run_lstm, RecurrentAutoencoder, run_lstm_autoencoder
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.metrics import mean_absolute_error
@@ -63,29 +63,19 @@ for chem in chemicals:
     # if(chem in os.listdir('outputFiles/pcc1_reconstructed_spc')):
     #     continue
     # model = run(chem)
-    model = run_lstm(chem,100)
+    # model = run_lstm(chem,100)
+    model = run_lstm_autoencoder('aluminium')
     # logging.info(f'Loading model for {chem}')
     # model = load_model(f'{os.getcwd()}/outputFiles/models/{chem}')
     # model = RecurrentAutoencoder(1728,1)
     # model = model.load_state_dict(torch.load(f'{os.getcwd()}/model/{chem}'))
-    print(model)
-    model.eval()
+
 
     spc = pd.read_csv(f'outputFiles/PCC1/test/{chem}.csv', index_col=0)
-    spc_sequences = spc.astype(np.float32).to_numpy().tolist()
-    spc_dataset = [torch.tensor(s).unsqueeze(1).float() for s in spc_sequences]
-    spc_dataset = spc_dataset[0:20]
-    
     outliers_spc = pd.read_csv(f'outputFiles/PCC2/{chem}.csv', index_col=0)
-    outliers_sequences = outliers_spc.astype(np.float32).to_numpy().tolist()
-    outliers_dataset = [torch.tensor(s).unsqueeze(1).float() for s in outliers_sequences]
-    outliers_dataset = outliers_dataset[0:20]
 
     print(f'outputFiles/models/{chem}')
     logging.info(f'Training for {chem}')
-
-    # model = run(chem)
-
 
     # spc_no_outliers = np.array(spc)
     # spc_pcc2_outliers = np.array(outliers_spc)
@@ -102,16 +92,10 @@ for chem in chemicals:
 
     logging.info(f'Prediction of pcc1')
     # pcc1_predictions = model.predict(spc_no_outliers)
-    pcc1_predictions = []
-    for sp in spc_dataset:
-        pcc1_predictions.append(denormalize(model(torch.tensor(normalize(sp.tolist()))), min(sp), max(sp)))
-    # if(len(spc_pcc3_outliers) == 0):
-    #     continue
+    pcc1_predictions = model.predict(spc)
 
     logging.info(f'Prediction of pcc2')
-    pcc2_predictions = []
-    for sp in outliers_dataset:
-        pcc2_predictions.append(denormalize(model(torch.tensor(normalize(sp.tolist()))), min(sp), max(sp)))
+    pcc2_predictions = model.predict(outliers_spc)
 
 
     # pcc2_predictions = model.predict(spc_pcc2_outliers)
@@ -129,10 +113,10 @@ for chem in chemicals:
     #     max = (np.max(np.array(outliers_spc)[i]))
     #     pcc2_predictions[i] = denormalize(pcc2_predictions[i], min, max)
 
-    pcc1_predictions = pd.DataFrame([i.detach().numpy().reshape(1728) for i in pcc1_predictions])
-    pcc1_predictions.index = spc.index[0:20]
-    pcc2_predictions = pd.DataFrame([i.detach().numpy().reshape(1728) for i in pcc2_predictions])
-    pcc2_predictions.index = outliers_spc.index[0:20]
+    pcc1_predictions = pd.DataFrame(pcc1_predictions)
+    pcc1_predictions.index = spc.index
+    pcc2_predictions = pd.DataFrame(pcc2_predictions)
+    pcc2_predictions.index = outliers_spc.index
 
     logging.info(f'Saving reconstruted spc')
     print(len(pcc1_predictions))
