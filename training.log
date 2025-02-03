@@ -1,0 +1,28 @@
+2025-02-03 11:12:51 - INFO - Training for organic_carbon
+2025-02-03 11:12:53 - WARNING - `lr` is deprecated in Keras optimizer, please use `learning_rate` or use the legacy optimizer, e.g.,tf.keras.optimizers.legacy.SGD.
+2025-02-03 11:13:32 - INFO - Assets written to: outputFiles/models/organic_carbon/assets
+2025-02-03 11:13:34 - INFO - Normalization of pcc1
+2025-02-03 11:19:20 - INFO - Training for organic_carbon
+2025-02-03 11:19:22 - WARNING - `lr` is deprecated in Keras optimizer, please use `learning_rate` or use the legacy optimizer, e.g.,tf.keras.optimizers.legacy.SGD.
+2025-02-03 11:22:48 - INFO - Assets written to: outputFiles/models/organic_carbon/assets
+2025-02-03 11:22:50 - INFO - Normalization of pcc1
+2025-02-03 11:22:50 - INFO - Normalization of pcc2
+2025-02-03 11:22:50 - INFO - Prediction of pcc1
+2025-02-03 11:22:50 - INFO - Prediction of pcc2
+2025-02-03 11:22:50 - INFO - Denormalization of pcc1
+2025-02-03 11:22:50 - INFO - Denormalization of pcc3
+2025-02-03 11:22:50 - INFO - Saving reconstruted spc
+2025-02-03 12:24:22 - INFO - Normalization of pcc1
+2025-02-03 12:24:22 - INFO - Normalization of pcc3
+2025-02-03 12:24:22 - INFO - Prediction of pcc1
+2025-02-03 12:24:22 - INFO - Prediction of pcc3
+2025-02-03 12:24:23 - INFO - Denormalization of pcc1
+2025-02-03 12:24:23 - INFO - Denormalization of pcc3
+2025-02-03 12:24:23 - INFO - Saving reconstruted spc
+2025-02-03 12:26:03 - INFO - Normalization of pcc1
+2025-02-03 12:26:03 - INFO - Normalization of pcc3
+2025-02-03 12:26:04 - INFO - Prediction of pcc1
+2025-02-03 12:26:04 - INFO - Prediction of pcc3
+2025-02-03 12:26:04 - INFO - Denormalization of pcc1
+2025-02-03 12:26:04 - INFO - Denormalization of pcc3
+2025-02-03 12:26:04 - INFO - Saving reconstruted spc
