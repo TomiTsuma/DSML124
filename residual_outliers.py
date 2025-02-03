@@ -5,7 +5,7 @@ from data import load_residual_outliers
 
 
 
-def residual_outliers(chems):
+def residual_outliers(chems, model_version):
     print("Getting residual outliers for preds vs wetchem")
     spectra = pd.read_csv('outputFiles/spectra.csv', index_col=0, engine='c')
     wetchem_df = pd.read_csv("outputFiles/cleaned_wetchem.csv")
@@ -19,7 +19,7 @@ def residual_outliers(chems):
     os.makedirs('outputFiles/PCC_Classes', exist_ok=True)
     for chem in chems:
         wet = wetchem_df.loc[wetchem_df[chem].notnull()]
-        df = pd.read_csv(f"./outputFiles/predictions/DLv2.2/{chem}.csv")
+        df = pd.read_csv(f"./outputFiles/predictions/{model_version}/{chem}.csv")
         df = df.rename(columns={'Unnamed: 0':'sample_code'})
         if('sample_code' not in df.columns):
             df = df.rename(columns={'sample_id':'sample_code'})

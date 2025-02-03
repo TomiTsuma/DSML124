@@ -59,7 +59,7 @@ chemicals = [
 #     )
 
 
-residual_outliers(chemicals)
+residual_outliers(chemicals, "v2.3")
 
 # for chem in chemicals:
 
