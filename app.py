@@ -127,7 +127,7 @@ for chem in chemicals:
     print(len(pcc1_predictions))
     print(len(pcc2_predictions))
     os.makedirs(f'outputFiles/pcc1_reconstructed_spc', exist_ok=True)
-    os.makedirs(f'outputFiles/pcc2_reconstructed_spc', exist_ok=True)
+    os.makedirs(f'outputFiles/pcc3_reconstructed_spc', exist_ok=True)
     pcc1_predictions.to_csv(f'outputFiles/pcc1_reconstructed_spc/{chem}.csv')
     pcc2_predictions.to_csv(f'outputFiles/pcc3_reconstructed_spc/{chem}.csv')
 
