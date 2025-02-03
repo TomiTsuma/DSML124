@@ -233,7 +233,6 @@ def getWetchem(chemicals=["organic_carbon"]):
 
     return wetchem_df
 
-getWetchem()
 
 def load_residual_outliers():
     redbooth_outliers = {'boron' : [-5, 5], 'phosphorus' : [-250, 450],'zinc' : [-25, 100], 'sulphur' : [-100, 400],'sodium':[-1000,2500], 'magnesium':[-500,1000],'potassium' : [-800,1600],'calcium':[-5000,5000],'copper' : [-100,300],'ec_salts' : [-1000,2000],'organic_carbon' : [-2,2] }
@@ -251,7 +250,7 @@ def load_residual_outliers():
 
     undefined_chems = [i for i in all_chemicals if (i not in  pcc_elements and i not in redbooth_properties)]
 
-    uncleaned_wetchem_df = pd.read_csv("inputFiles/cleaned_wetchem.csv")
+    uncleaned_wetchem_df = pd.read_csv("outputFiles/cleaned_wetchem.csv")
     uncleaned_wetchem_df = uncleaned_wetchem_df.rename(columns={"Unnamed: 0":"sample_code"})
     uncleaned_wetchem_df.set_index("sample_code")
     for column in uncleaned_wetchem_df.columns:
