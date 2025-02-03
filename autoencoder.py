@@ -3,6 +3,7 @@ import torch
 import pandas as pd
 import numpy as np
 import os
+import tensorflow as tf
 from tensorflow.keras import Model, Sequential
 from tensorflow.keras.layers import Dense,Dropout, LSTM, RepeatVector, TimeDistributed, Flatten
 from tensorflow.keras.optimizers import Adam, SGD
@@ -157,8 +158,8 @@ def run(chemical):
 
 
 
-    valid_spc, scaler = normalize(valid)
-    pickle.dump(scaler, open("/mnt/batch/tasks/shared/LS_root/mounts/clusters/cnls-ds-compute-instance/code/Users/tsuma.thomas/DSML124/outputFiles/scalers/{}.pkl".format(chemical), "wb"))
+    valid_spc, valid_scaler = normalize(valid)
+    pickle.dump(scaler, open("/home/tom/DSML124/outputFiles/scalers/{}.pkl".format(chemical), "wb"))
 
     X_spc = np.array(X_spc)
     valid_spc = np.array(valid_spc)
@@ -186,7 +187,7 @@ def run(chemical):
     callbacks.append(reduce_lr)
     adam = Adam(learning_rate=0.001, )
     sgd = SGD(lr=0.01, momentum=0.9)
-    autoencoder.compile(optimizer=adam, loss='mae')
+    autoencoder.compile(optimizer=adam, loss='mae', metrics=[tf.keras.metrics.CosineSimilarity(axis=1)])
     history = autoencoder.fit(X_spc, X_spc, 
           epochs=300, 
           batch_size=52,
