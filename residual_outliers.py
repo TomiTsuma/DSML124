@@ -11,7 +11,7 @@ def residual_outliers(chems, model_version):
     wetchem_df = pd.read_csv("outputFiles/cleaned_wetchem.csv")
     print(len(wetchem_df))
 
-    redbooth_outliers_dict, pcc_classes_dict = load_residual_outliers()
+    redbooth_outliers_dict, pcc_classes_dict = load_residual_outliers(chemicals=chems)
 
     os.makedirs('outputFiles/PCC1', exist_ok=True)
     os.makedirs('outputFiles/PCC2', exist_ok=True)

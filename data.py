@@ -234,7 +234,7 @@ def getWetchem(chemicals=["organic_carbon"]):
     return wetchem_df
 
 
-def load_residual_outliers():
+def load_residual_outliers(chemicals=['organic_carbon']):
     redbooth_outliers = {'boron' : [-5, 5], 'phosphorus' : [-250, 450],'zinc' : [-25, 100], 'sulphur' : [-100, 400],'sodium':[-1000,2500], 'magnesium':[-500,1000],'potassium' : [-800,1600],'calcium':[-5000,5000],'copper' : [-100,300],'ec_salts' : [-1000,2000],'organic_carbon' : [-2,2] }
     redbooth_properties = [i for i in redbooth_outliers.keys()]
 
@@ -243,10 +243,7 @@ def load_residual_outliers():
     pcc_classes_dict = {key: pcc_classes_dict[key] for key in pcc_classes_dict.keys() if key in pcc_elements}
 
 
-    all_chemicals = ['aluminium', 
-            'phosphorus', 'ph', 'exchangeable_acidity', 'calcium', 'magnesium',
-              'sulphur', 'sodium', 'iron', 'manganese', 'boron', 'copper', 'zinc', 'total_nitrogen', 'potassium',
-             'ec_salts', 'organic_carbon', 'cec', 'sand', 'silt', 'clay']
+    all_chemicals = chemicals
 
     undefined_chems = [i for i in all_chemicals if (i not in  pcc_elements and i not in redbooth_properties)]
 
