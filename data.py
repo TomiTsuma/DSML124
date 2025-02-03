@@ -98,8 +98,8 @@ def get_spc():
     spectra.to_csv('outputFiles/spectra.csv')
 # get_spc()
 
-def getWetchem(sample_codes, chemicals=["organic_carbon"]):
-    
+def getWetchem(chemicals=["organic_carbon"]):
+    sample_codes = pd.read_csv("outputFiles/spectra.csv",index_col=0).index
     cn_chems = ['organic_carbon', 'total_nitrogen']
     cn = pd.DataFrame()
     for file in Path("/home/tom/DSML124/inputFiles/CN_files").rglob("**/*.xlsx"):
@@ -224,8 +224,11 @@ def getWetchem(sample_codes, chemicals=["organic_carbon"]):
             uncleaned_wetchem_df[column] = vals
 
     wetchem_df = uncleaned_wetchem_df.copy(deep=True)
+    wetchem_df.to_csv("outputFiles/cleaned_wetchem.csv")
 
     return wetchem_df
+
+getWetchem()
 
 def load_residual_outliers():
     redbooth_outliers = {'boron' : [-5, 5], 'phosphorus' : [-250, 450],'zinc' : [-25, 100], 'sulphur' : [-100, 400],'sodium':[-1000,2500], 'magnesium':[-500,1000],'potassium' : [-800,1600],'calcium':[-5000,5000],'copper' : [-100,300],'ec_salts' : [-1000,2000],'organic_carbon' : [-2,2] }

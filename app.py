@@ -45,7 +45,7 @@ chemicals = [
 ]
 
 
-data = pd.read_csv('outputFiles/v1_spectra.csv', index_col=0, engine='c')
+data = pd.read_csv('outputFiles/spectra.csv', index_col=0, engine='c')
 
 predict_chems(
     '/home/tom/DSML124/QC_Model_Predictions/dl_models_all_chems_20210414/v2.3',
@@ -56,9 +56,10 @@ predict_chems(
     )
 
 
-# residual_outliers(chemicals)
+residual_outliers(chemicals)
 
 for chem in chemicals:
+
     print(chem)
 
     # split_spc(f"{os.getcwd()}/outputFiles/v1_spectra.csv", f"{os.getcwd()}/outputFiles/rds", f"{os.getcwd()}/outputFiles/splits", chem)
