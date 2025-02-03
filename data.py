@@ -1,13 +1,103 @@
+import psycopg2
 import pandas as pd
+import ast
 import numpy as np
+import os
+from sqlalchemy import create_engine
+from dotenv import load_dotenv
+
+def get_db_cursor():
+    username = "doadmin"
+    password = 'yzmodwh2oh16iks6'
+    host = 'db-postgresql-cl1-do-user-2276924-0.db.ondigitalocean.com'
+    port = 25060
+    database = 'MandatoryMetadata'
+    schema = 'historical'
+
+    conn = psycopg2.connect(host=host, database=database,
+                            user=username, password=password, port=port)
+    cur = conn.cursor()
+    cur.execute("SET search_path TO " + schema)
+
+    return conn, cur
+conn, cur = get_db_cursor()
+
+def convertSpectra(df):
+    print("Converting spectra")
+    df_ = pd.DataFrame([i[[i for i in i.keys()][0]] for i in df['averaged_spectra'].values],columns = np.arange(522,3977,2))
+    df_.index = df.index
+    print("Spectra converted")
+    return df_
+
+def getSpectralCodes():
+    query = f"""
+    SELECT DISTINCT mandatorymetadata.sample_code  
+    FROM spectraldata 
+    INNER JOIN mandatorymetadata 
+    ON mandatorymetadata.metadata_id = spectraldata.metadata_id 
+    WHERE 
+    is_finalized=True AND 
+    passed=True AND 
+    is_active=True AND 
+    averaged=True AND 
+    mandatorymetadata.sensor_id = 1 AND  
+    mandatorymetadata.sample_type_id = 1 AND
+    mandatorymetadata.sample_pretreatment_id = 1"""
+
+    return pd.read_sql(query, con=conn)
+
 
 def get_spc():
-    spc = pd.read_csv('inputFiles/19_8_2022_global_spectra_datav2dot2_with_rw.csv', index_col=0, engine='c')
-    uncleaned_wetchem_df = pd.read_csv("inputFiles/cleaned_wetchem.csv")
-    uncleaned_wetchem_df = uncleaned_wetchem_df.rename(columns={"Unnamed: 0":"sample_code"})
+    
+    sample_codes = getSpectralCodes()['sample_code'].tolist()
+    spectra = pd.DataFrame(columns=['sample_code','averaged_spectra'])
 
-    spc = spc.loc[spc.index.isin(uncleaned_wetchem_df['sample_code'])]
-    spc.to_csv('outputFiles/spectra.csv')
+    if(len(sample_codes) < 5000):
+        count  = len(sample_codes)
+        step=count
+    elif(len(sample_codes) < 70000):
+        count = len(sample_codes)
+        step=5000
+    else:
+        count = len(sample_codes)
+        step=5000
+    start = 0
+
+
+
+    for i in np.arange(start, count, step):
+        
+        print("Fetching spectra from {}".format(start))
+        samples = [i for i in sample_codes][start:start+step]
+        query = f"""
+        SELECT spectraldata.metadata_id, averaged_spectra, mandatorymetadata.sample_code  
+        FROM spectraldata 
+        INNER JOIN mandatorymetadata 
+        ON mandatorymetadata.metadata_id = spectraldata.metadata_id 
+        WHERE 
+        is_finalized=True AND 
+        passed=True AND 
+        is_active=True AND 
+        averaged=True AND 
+        mandatorymetadata.sensor_id = 1 AND  
+        mandatorymetadata.sample_type_id = 1 AND
+        mandatorymetadata.sample_pretreatment_id = 1 AND
+        sample_code IN {str(samples).replace('[','(').replace(']',')')}"""
+
+        _ = pd.read_sql(query, con=conn)
+        spectra = pd.concat([spectra, _], axis=0)
+        start = start + step
+        if (count-step) > 5000:
+            step=5000
+        else:
+            step = count-step
+
+    conn.close()
+    spectra = spectra[['sample_code', 'averaged_spectra']]
+    spectra = spectra.set_index('sample_code')
+    spectra = convertSpectra(spectra)
+    spectra.to_csv('outputFiles/spectra.csv')
+get_spc()
 
 def load_residual_outliers():
     redbooth_outliers = {'boron' : [-5, 5], 'phosphorus' : [-250, 450],'zinc' : [-25, 100], 'sulphur' : [-100, 400],'sodium':[-1000,2500], 'magnesium':[-500,1000],'potassium' : [-800,1600],'calcium':[-5000,5000],'copper' : [-100,300],'ec_salts' : [-1000,2000],'organic_carbon' : [-2,2] }
