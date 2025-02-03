@@ -19,7 +19,7 @@ def residual_outliers(chems, model_version):
     os.makedirs('outputFiles/PCC_Classes', exist_ok=True)
     for chem in chems:
         wet = wetchem_df.loc[wetchem_df[chem].notnull()]
-        df = pd.read_csv(f"./outputFiles/predictions/{model_version}/{chem}.csv")
+        df = pd.read_csv(f"./outputFiles/predictions/{model_version}/{chem}_preds.csv")
         df = df.rename(columns={'Unnamed: 0':'sample_code'})
         if('sample_code' not in df.columns):
             df = df.rename(columns={'sample_id':'sample_code'})
