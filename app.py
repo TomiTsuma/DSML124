@@ -71,64 +71,64 @@ chemicals = [
 
 # residual_outliers(chemicals, "v2.3")
 
-for chem in chemicals:
+# for chem in chemicals:
 
-    print(chem)
+#     print(chem)
 
-    split_spc(f"{os.getcwd()}/outputFiles/PCC1/{chem}.csv", f"{os.getcwd()}/outputFiles/rds", f"{os.getcwd()}/outputFiles/splits", chem)
-    logging.info(f'Training for {chem}')
-    model = run(chem)
-    model = load_model(f'{os.getcwd()}/outputFiles/models/{chem}')
+#     # split_spc(f"{os.getcwd()}/outputFiles/PCC1/{chem}.csv", f"{os.getcwd()}/outputFiles/rds", f"{os.getcwd()}/outputFiles/splits", chem)
+#     # logging.info(f'Training for {chem}')
+#     # model = run(chem)
+#     model = load_model(f'{os.getcwd()}/outputFiles/models/{chem}')
 
 
 
-    spc = pd.read_csv(f'outputFiles/PCC1/test/{chem}.csv', index_col=0)
+#     spc = pd.read_csv(f'outputFiles/PCC1/test/{chem}.csv', index_col=0)
 
-    outliers_spc = pd.DataFrame()
-    if(f"{chem}.csv" in os.listdir("outputFiles/PCC2")):
-        _ = pd.read_csv(f'outputFiles/PCC2/{chem}.csv', index_col=0)
-        outliers_spc = pd.concat([outliers_spc,_])
-    if(f"{chem}.csv" in os.listdir("outputFiles/PCC3")):
-        _ = pd.read_csv(f'outputFiles/PCC3/{chem}.csv', index_col=0)
-        outliers_spc = pd.concat([outliers_spc,_])
+#     outliers_spc = pd.DataFrame()
+#     if(f"{chem}.csv" in os.listdir("outputFiles/PCC2")):
+#         _ = pd.read_csv(f'outputFiles/PCC2/{chem}.csv', index_col=0)
+#         outliers_spc = pd.concat([outliers_spc,_])
+#     if(f"{chem}.csv" in os.listdir("outputFiles/PCC3")):
+#         _ = pd.read_csv(f'outputFiles/PCC3/{chem}.csv', index_col=0)
+#         outliers_spc = pd.concat([outliers_spc,_])
     
 
 
 
-    logging.info(f'Normalization of pcc1')
-    scaler = pickle.load(open("/home/tom/DSML124/outputFiles/scalers/{}.pkl".format(chem), "rb"))
+#     logging.info(f'Normalization of pcc1')
+#     scaler = pickle.load(open("/home/tom/DSML124/outputFiles/scalers/{}.pkl".format(chem), "rb"))
 
-    spc_no_outliers = scaler.transform(spc)
+#     spc_no_outliers = scaler.transform(spc)
 
-    logging.info(f'Normalization of pcc2')
-    spc_pcc2_outliers = scaler.transform(outliers_spc)
+#     logging.info(f'Normalization of pcc2')
+#     spc_pcc2_outliers = scaler.transform(outliers_spc)
 
 
-    logging.info(f'Prediction of pcc1')
-    print(spc_no_outliers)
-    pcc1_predictions = model.predict(spc_no_outliers)
+#     logging.info(f'Prediction of pcc1')
+#     print(spc_no_outliers)
+#     pcc1_predictions = model.predict(spc_no_outliers)
 
-    logging.info(f'Prediction of pcc2')
-    pcc2_predictions = model.predict(spc_pcc2_outliers)
+#     logging.info(f'Prediction of pcc2')
+#     pcc2_predictions = model.predict(spc_pcc2_outliers)
 
-    logging.info(f'Denormalization of pcc1')
-    pcc1_predictions = scaler.inverse_transform(pcc1_predictions)
+#     logging.info(f'Denormalization of pcc1')
+#     pcc1_predictions = scaler.inverse_transform(pcc1_predictions)
 
-    logging.info(f'Denormalization of pcc3')
-    pcc2_predictions = scaler.inverse_transform(pcc2_predictions)
+#     logging.info(f'Denormalization of pcc3')
+#     pcc2_predictions = scaler.inverse_transform(pcc2_predictions)
 
-    pcc1_predictions = pd.DataFrame((pcc1_predictions))
-    pcc1_predictions.index = spc.index
-    pcc2_predictions = pd.DataFrame((pcc2_predictions))
-    pcc2_predictions.index = outliers_spc.index
+#     pcc1_predictions = pd.DataFrame((pcc1_predictions))
+#     pcc1_predictions.index = spc.index
+#     pcc2_predictions = pd.DataFrame((pcc2_predictions))
+#     pcc2_predictions.index = outliers_spc.index
 
-    logging.info(f'Saving reconstruted spc')
-    print(len(pcc1_predictions))
-    print(len(pcc2_predictions))
-    os.makedirs(f'outputFiles/pcc1_reconstructed_spc', exist_ok=True)
-    os.makedirs(f'outputFiles/pcc2_reconstructed_spc', exist_ok=True)
-    pcc1_predictions.to_csv(f'outputFiles/pcc1_reconstructed_spc/{chem}.csv')
-    pcc2_predictions.to_csv(f'outputFiles/pcc2_reconstructed_spc/{chem}.csv')
+#     logging.info(f'Saving reconstruted spc')
+#     print(len(pcc1_predictions))
+#     print(len(pcc2_predictions))
+#     os.makedirs(f'outputFiles/pcc1_reconstructed_spc', exist_ok=True)
+#     os.makedirs(f'outputFiles/pcc2_reconstructed_spc', exist_ok=True)
+#     pcc1_predictions.to_csv(f'outputFiles/pcc1_reconstructed_spc/{chem}.csv')
+#     pcc2_predictions.to_csv(f'outputFiles/pcc2_reconstructed_spc/{chem}.csv')
 
 
 for chem in chemicals:
@@ -153,7 +153,7 @@ for chem in chemicals:
     )
 
     predict_chems(
-        '/home/tom/QC_Model_Predictions/dl_models_all_chems_20210414/v2.3',
+        '/home/tom/DSML124/QC_Model_Predictions/dl_models_all_chems_20210414/v2.3',
         f'outputFiles/predictions/pcc2_autoencoded',
         [chem],
         ['v2.3'],
