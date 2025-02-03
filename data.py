@@ -3,7 +3,6 @@ import pandas as pd
 import ast
 import numpy as np
 import os
-from sqlalchemy import create_engine
 from dotenv import load_dotenv
 
 def get_db_cursor():
