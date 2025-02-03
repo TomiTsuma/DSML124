@@ -102,7 +102,8 @@ def get_spc():
 # get_spc()
 
 def getWetchem(chemicals=["organic_carbon"]):
-    sample_codes = pd.read_csv("outputFiles/spectra.csv",index_col=0).index
+    spc = pd.read_csv("outputFiles/spectra.csv",index_col=0)
+    sample_codes = spc.index
     cn_chems = ['organic_carbon', 'total_nitrogen']
     cn = pd.DataFrame()
     for file in Path("/home/tom/DSML124/inputFiles/CN_files").rglob("**/*.xlsx"):
@@ -228,6 +229,7 @@ def getWetchem(chemicals=["organic_carbon"]):
 
     wetchem_df = uncleaned_wetchem_df.copy(deep=True)
     wetchem_df.to_csv("outputFiles/cleaned_wetchem.csv")
+
 
     return wetchem_df
 

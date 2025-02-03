@@ -44,8 +44,11 @@ chemicals = [
     #   ,'silt', 'clay'
 ]
 
-
+wetchem = pd.read_csv("outputFiles/cleaned_wetchem.csv",index_col=0)
 data = pd.read_csv('outputFiles/spectra.csv', index_col=0, engine='c')
+data = data.reset_index()
+data = data.loc[data['sample_code'].isin(wetchem.index)]
+data = data.set_index("sample_code")
 
 predict_chems(
     '/home/tom/DSML124/QC_Model_Predictions/dl_models_all_chems_20210414/v2.3',
@@ -56,65 +59,65 @@ predict_chems(
     )
 
 
-residual_outliers(chemicals)
+# residual_outliers(chemicals)
 
-for chem in chemicals:
+# for chem in chemicals:
 
-    print(chem)
+#     print(chem)
 
-    # split_spc(f"{os.getcwd()}/outputFiles/v1_spectra.csv", f"{os.getcwd()}/outputFiles/rds", f"{os.getcwd()}/outputFiles/splits", chem)
-    # model = run(chem)
-    model = load_model(f'{os.getcwd()}/outputFiles/models/{chem}')
-
-
-
-    spc = pd.read_csv(f'outputFiles/PCC1/test/{chem}.csv', index_col=0)
-
-    outliers_spc = pd.DataFrame()
-    if(f"{chem}.csv" in os.listdir("outputFiles/PCC2")):
-        _ = pd.read_csv(f'outputFiles/PCC2/{chem}.csv', index_col=0)
-        outliers_spc = pd.concat([outliers_spc,_])
-    if(f"{chem}.csv" in os.listdir("outputFiles/PCC3")):
-        _ = pd.read_csv(f'outputFiles/PCC3/{chem}.csv', index_col=0)
-        outliers_spc = pd.concat([outliers_spc,_])
-    logging.info(f'Training for {chem}')
+#     # split_spc(f"{os.getcwd()}/outputFiles/v1_spectra.csv", f"{os.getcwd()}/outputFiles/rds", f"{os.getcwd()}/outputFiles/splits", chem)
+#     # model = run(chem)
+#     model = load_model(f'{os.getcwd()}/outputFiles/models/{chem}')
 
 
 
-    logging.info(f'Normalization of pcc1')
-    scaler = pickle.load(open("/mnt/batch/tasks/shared/LS_root/mounts/clusters/cnls-ds-compute-instance/code/Users/tsuma.thomas/DSML124/outputFiles/scalers/{}.pkl".format(chem), "rb"))
+#     spc = pd.read_csv(f'outputFiles/PCC1/test/{chem}.csv', index_col=0)
 
-    spc_no_outliers = scaler.transform(spc)
+#     outliers_spc = pd.DataFrame()
+#     if(f"{chem}.csv" in os.listdir("outputFiles/PCC2")):
+#         _ = pd.read_csv(f'outputFiles/PCC2/{chem}.csv', index_col=0)
+#         outliers_spc = pd.concat([outliers_spc,_])
+#     if(f"{chem}.csv" in os.listdir("outputFiles/PCC3")):
+#         _ = pd.read_csv(f'outputFiles/PCC3/{chem}.csv', index_col=0)
+#         outliers_spc = pd.concat([outliers_spc,_])
+#     logging.info(f'Training for {chem}')
 
-    logging.info(f'Normalization of pcc2')
-    spc_pcc2_outliers = scaler.transform(outliers_spc)
 
 
-    logging.info(f'Prediction of pcc1')
-    print(spc_no_outliers)
-    pcc1_predictions = model.predict(spc_no_outliers)
+#     logging.info(f'Normalization of pcc1')
+#     scaler = pickle.load(open("/mnt/batch/tasks/shared/LS_root/mounts/clusters/cnls-ds-compute-instance/code/Users/tsuma.thomas/DSML124/outputFiles/scalers/{}.pkl".format(chem), "rb"))
 
-    logging.info(f'Prediction of pcc2')
-    pcc2_predictions = model.predict(spc_pcc2_outliers)
+#     spc_no_outliers = scaler.transform(spc)
 
-    logging.info(f'Denormalization of pcc1')
-    pcc1_predictions = scaler.inverse_transform(pcc1_predictions)
+#     logging.info(f'Normalization of pcc2')
+#     spc_pcc2_outliers = scaler.transform(outliers_spc)
 
-    logging.info(f'Denormalization of pcc3')
-    pcc2_predictions = scaler.inverse_transform(pcc2_predictions)
 
-    pcc1_predictions = pd.DataFrame((pcc1_predictions))
-    pcc1_predictions.index = spc.index
-    pcc2_predictions = pd.DataFrame((pcc2_predictions))
-    pcc2_predictions.index = outliers_spc.index
+#     logging.info(f'Prediction of pcc1')
+#     print(spc_no_outliers)
+#     pcc1_predictions = model.predict(spc_no_outliers)
 
-    logging.info(f'Saving reconstruted spc')
-    print(len(pcc1_predictions))
-    print(len(pcc2_predictions))
-    os.makedirs(f'outputFiles/pcc1_reconstructed_spc', exist_ok=True)
-    os.makedirs(f'outputFiles/pcc2_reconstructed_spc', exist_ok=True)
-    pcc1_predictions.to_csv(f'outputFiles/pcc1_reconstructed_spc/{chem}.csv')
-    pcc2_predictions.to_csv(f'outputFiles/pcc2_reconstructed_spc/{chem}.csv')
+#     logging.info(f'Prediction of pcc2')
+#     pcc2_predictions = model.predict(spc_pcc2_outliers)
+
+#     logging.info(f'Denormalization of pcc1')
+#     pcc1_predictions = scaler.inverse_transform(pcc1_predictions)
+
+#     logging.info(f'Denormalization of pcc3')
+#     pcc2_predictions = scaler.inverse_transform(pcc2_predictions)
+
+#     pcc1_predictions = pd.DataFrame((pcc1_predictions))
+#     pcc1_predictions.index = spc.index
+#     pcc2_predictions = pd.DataFrame((pcc2_predictions))
+#     pcc2_predictions.index = outliers_spc.index
+
+#     logging.info(f'Saving reconstruted spc')
+#     print(len(pcc1_predictions))
+#     print(len(pcc2_predictions))
+#     os.makedirs(f'outputFiles/pcc1_reconstructed_spc', exist_ok=True)
+#     os.makedirs(f'outputFiles/pcc2_reconstructed_spc', exist_ok=True)
+#     pcc1_predictions.to_csv(f'outputFiles/pcc1_reconstructed_spc/{chem}.csv')
+#     pcc2_predictions.to_csv(f'outputFiles/pcc2_reconstructed_spc/{chem}.csv')
 
 
 # for chem in chemicals:
@@ -146,8 +149,8 @@ for chem in chemicals:
 #         pcc3_reconstructed
 #     )
 
-residual_outliers_reconstructed(chemicals)
-residual_outliers_reconstructed_wetchem(chemicals)
+# residual_outliers_reconstructed(chemicals)
+# residual_outliers_reconstructed_wetchem(chemicals)
 
 # for chem in chemicals:
     # pcc2_confusion_matrix(chem)
