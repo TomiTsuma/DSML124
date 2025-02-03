@@ -96,7 +96,7 @@ for chem in chemicals:
 
 
     logging.info(f'Normalization of pcc1')
-    scaler = pickle.load(open("/mnt/batch/tasks/shared/LS_root/mounts/clusters/cnls-ds-compute-instance/code/Users/tsuma.thomas/DSML124/outputFiles/scalers/{}.pkl".format(chem), "rb"))
+    scaler = pickle.load(open("/home/tom/DSML124/outputFiles/scalers/{}.pkl".format(chem), "rb"))
 
     spc_no_outliers = scaler.transform(spc)
 
@@ -131,77 +131,77 @@ for chem in chemicals:
     pcc2_predictions.to_csv(f'outputFiles/pcc2_reconstructed_spc/{chem}.csv')
 
 
-# for chem in chemicals:
-#     print(chem)
-#     os.makedirs(f"outputFiles/predictions/pcc1_autoencoded", exist_ok=True)
-#     os.makedirs(f"outputFiles/predictions/pcc2_autoencoded", exist_ok=True)
+for chem in chemicals:
+    print(chem)
+    os.makedirs(f"outputFiles/predictions/pcc1_autoencoded", exist_ok=True)
+    os.makedirs(f"outputFiles/predictions/pcc2_autoencoded", exist_ok=True)
 
-#     pcc1_reconstructed = pd.read_csv(
-#         f'outputFiles/pcc1_reconstructed_spc/{chem}.csv', index_col=0)
-#     pcc3_reconstructed = pd.read_csv(
-#         f'outputFiles/pcc2_reconstructed_spc/{chem}.csv', index_col=0)
+    pcc1_reconstructed = pd.read_csv(
+        f'outputFiles/pcc1_reconstructed_spc/{chem}.csv', index_col=0)
+    pcc3_reconstructed = pd.read_csv(
+        f'outputFiles/pcc2_reconstructed_spc/{chem}.csv', index_col=0)
 
-#     print(len(pcc1_reconstructed))
-#     print(len(pcc3_reconstructed))
+    print(len(pcc1_reconstructed))
+    print(len(pcc3_reconstructed))
 
-#     predict_chems(
-#         '/mnt/batch/tasks/shared/LS_root/mounts/clusters/cnls-ds-compute-instance/code/Users/tsuma.thomas/QC_Model_Predictions/dl_models_all_chems_20210414/v2.2',
-#         f'outputFiles/predictions/pcc1_autoencoded',
-#         [chem],
-#         ['DLv2.2'],
-#         pcc1_reconstructed
-#     )
+    predict_chems(
+        '/home/tom/DSML124/QC_Model_Predictions/dl_models_all_chems_20210414/v2.3',
+        f'outputFiles/predictions/pcc1_autoencoded',
+        [chem],
+        ['v2.3'],
+        pcc1_reconstructed
+    )
 
-#     predict_chems(
-#         '/mnt/batch/tasks/shared/LS_root/mounts/clusters/cnls-ds-compute-instance/code/Users/tsuma.thomas/QC_Model_Predictions/dl_models_all_chems_20210414/v2.2',
-#         f'outputFiles/predictions/pcc2_autoencoded',
-#         [chem],
-#         ['DLv2.2'],
-#         pcc3_reconstructed
-#     )
+    predict_chems(
+        '/home/tom/QC_Model_Predictions/dl_models_all_chems_20210414/v2.3',
+        f'outputFiles/predictions/pcc2_autoencoded',
+        [chem],
+        ['v2.3'],
+        pcc3_reconstructed
+    )
 
-# residual_outliers_reconstructed(chemicals)
-# residual_outliers_reconstructed_wetchem(chemicals)
-
-# for chem in chemicals:
-    # pcc2_confusion_matrix(chem)
-    # pcc3_confusion_matrix(chem)
-    # pcc1_confusion_matrix(chem)
-
+residual_outliers_reconstructed(chemicals)
+residual_outliers_reconstructed_wetchem(chemicals)
 
 # for chem in chemicals:
-#     os.makedirs(f"outputFiles/visualizations/{chem}", exist_ok=True)
-#     df = pd.read_csv(f"outputFiles/PCC1_Classes_Reconstructed/{chem}.csv")
-#     df = df[[chem, '0']]
+#     pcc2_confusion_matrix(chem)
+#     pcc3_confusion_matrix(chem)
+#     pcc1_confusion_matrix(chem)
 
-#     plt.scatter(df[chem], df['0'])
-#     plt.savefig(f"outputFiles/visualizations/{chem}/PCC1_Reconstructed_vs_Original.png")
-#     plt.clf()
 
-#     df = pd.read_csv(f"outputFiles/PCC3_Classes_Reconstructed/{chem}.csv")
-#     df = df[[chem, '0']]
+for chem in chemicals:
+    os.makedirs(f"outputFiles/visualizations/{chem}", exist_ok=True)
+    df = pd.read_csv(f"outputFiles/PCC1_Classes_Reconstructed/{chem}.csv")
+    df = df[[chem, '0']]
 
-#     plt.scatter(df[chem], df['0'])
-#     plt.savefig(f"outputFiles/visualizations/{chem}/PCC3_Reconstructed_vs_Original.png")
-#     plt.clf()
+    plt.scatter(df[chem], df['0'])
+    plt.savefig(f"outputFiles/visualizations/{chem}/PCC1_Reconstructed_vs_Original.png")
+    plt.clf()
 
-#     df = pd.read_csv(f"outputFiles/PCC_Classes/{chem}.csv")
-#     df = df[[chem, '0']]
+    df = pd.read_csv(f"outputFiles/PCC3_Classes_Reconstructed/{chem}.csv")
+    df = df[[chem, '0']]
 
-#     plt.scatter(df[chem], df['0'])
-#     plt.savefig(f"outputFiles/visualizations/{chem}/Wetchem_vs_Original.png")
-#     plt.clf()
+    plt.scatter(df[chem], df['0'])
+    plt.savefig(f"outputFiles/visualizations/{chem}/PCC3_Reconstructed_vs_Original.png")
+    plt.clf()
 
-#     df = pd.read_csv(f"outputFiles/PCC1_Wetchem_Reconstructed/{chem}.csv")
-#     df = df[[chem, '0']]
+    df = pd.read_csv(f"outputFiles/PCC_Classes/{chem}.csv")
+    df = df[[chem, '0']]
 
-#     plt.scatter(df[chem], df['0'])
-#     plt.savefig(f"outputFiles/visualizations/{chem}/PCC1_Wetchem_vs_Reconstructed.png")
-#     plt.clf()
+    plt.scatter(df[chem], df['0'])
+    plt.savefig(f"outputFiles/visualizations/{chem}/Wetchem_vs_Original.png")
+    plt.clf()
 
-#     df = pd.read_csv(f"outputFiles/PCC3_Wetchem_Reconstructed/{chem}.csv")
-#     df = df[[chem, '0']]
+    df = pd.read_csv(f"outputFiles/PCC1_Wetchem_Reconstructed/{chem}.csv")
+    df = df[[chem, '0']]
 
-#     plt.scatter(df[chem], df['0'])
-#     plt.savefig(f"outputFiles/visualizations/{chem}/PCC3_Wetchem_vs_Reconstructed.png")
-#     plt.clf()
+    plt.scatter(df[chem], df['0'])
+    plt.savefig(f"outputFiles/visualizations/{chem}/PCC1_Wetchem_vs_Reconstructed.png")
+    plt.clf()
+
+    df = pd.read_csv(f"outputFiles/PCC3_Wetchem_Reconstructed/{chem}.csv")
+    df = df[[chem, '0']]
+
+    plt.scatter(df[chem], df['0'])
+    plt.savefig(f"outputFiles/visualizations/{chem}/PCC3_Wetchem_vs_Reconstructed.png")
+    plt.clf()
