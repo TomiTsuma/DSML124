@@ -5,7 +5,7 @@ import sys
 import torch
 import pickle
 import pickle
-sys.path.append('/mnt/batch/tasks/shared/LS_root/mounts/clusters/cnls-ds-compute-instance/code/Users/tsuma.thomas/DSML124/QC_Model_Predictions')
+sys.path.append('/home/tom/DSML124/QC_Model_Predictions')
 from predict import predict_chems
 from autoencoder import run, denormalize, normalize, run_lstm, RecurrentAutoencoder, run_lstm_autoencoder
 import matplotlib.pyplot as plt
@@ -48,10 +48,10 @@ chemicals = [
 data = pd.read_csv('outputFiles/v1_spectra.csv', index_col=0, engine='c')
 
 predict_chems(
-    '/mnt/batch/tasks/shared/LS_root/mounts/clusters/cnls-ds-compute-instance/code/Users/tsuma.thomas/QC_Model_Predictions/dl_models_all_chems_20210414/v2.2',
-    '/mnt/batch/tasks/shared/LS_root/mounts/clusters/cnls-ds-compute-instance/code/Users/tsuma.thomas/DSML124/outputFiles/predictions',
+    '/home/tom/DSML124/QC_Model_Predictions/dl_models_all_chems_20210414/v2.3',
+    '/home/tom/DSML124/outputFiles/predictions',
     chemicals,
-    ['DLv2.2'],
+    ['v2.3'],
     data
     )
 

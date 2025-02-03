@@ -4,3 +4,4 @@ scikit-learn
 pathlib
 tensorflow-cpu
 joblib
+psycopg2-binary

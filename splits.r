@@ -4,9 +4,7 @@ library(clhs)
 library(ggplot2)
 library(stringr)
 
-chemicals <- c('boron', 'calcium', 'clay', 'copper', 'ec_salts',
-               'exchangeable_acidity', 'iron', 'magnesium', 'manganese', 'phosphorus',
-               'potassium', 'sand', 'silt', 'sodium', 'sulphur', 'zinc', 'ph')
+chemicals <- c('organic_carbon')
 
 split <- function(path_to_spc, path_to_rds, path_to_splits, chem){
   print(paste0("chemical : ", chem))
