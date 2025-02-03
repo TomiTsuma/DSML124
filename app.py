@@ -44,22 +44,22 @@ chemicals = [
     #   ,'silt', 'clay'
 ]
 
-wetchem = pd.read_csv("outputFiles/cleaned_wetchem.csv")
-wetchem = wetchem.set_index("sample_code")
-data = pd.read_csv('outputFiles/spectra.csv', index_col=0, engine='c')
+# wetchem = pd.read_csv("outputFiles/cleaned_wetchem.csv")
+# wetchem = wetchem.set_index("sample_code")
+# data = pd.read_csv('outputFiles/spectra.csv', index_col=0, engine='c')
 
-data = data.loc[data.index.isin(wetchem.index)]
+# data = data.loc[data.index.isin(wetchem.index)]
 
-predict_chems(
-    '/home/tom/DSML124/QC_Model_Predictions/dl_models_all_chems_20210414/v2.3',
-    '/home/tom/DSML124/outputFiles/predictions',
-    chemicals,
-    ['v2.3'],
-    data
-    )
+# predict_chems(
+#     '/home/tom/DSML124/QC_Model_Predictions/dl_models_all_chems_20210414/v2.3',
+#     '/home/tom/DSML124/outputFiles/predictions',
+#     chemicals,
+#     ['v2.3'],
+#     data
+#     )
 
 
-# residual_outliers(chemicals)
+residual_outliers(chemicals)
 
 # for chem in chemicals:
 
