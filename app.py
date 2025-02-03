@@ -22,7 +22,7 @@ from residual_outliers import residual_outliers, residual_outliers_reconstructed
 logging.basicConfig(filename='training.log', level=logging.INFO)
 
 chemicals = [
-    'aluminium'
+    # 'aluminium'
     # 'phosphorus',
     # 'ph',
     # 'exchangeable_acidity',
@@ -38,21 +38,22 @@ chemicals = [
     # 'total_nitrogen', 
     # 'potassium',
     # 'ec_salts', 
-    # 'organic_carbon', 'cec',
+    'organic_carbon'
+    # , 'cec',
     #  'sand'
     #   ,'silt', 'clay'
 ]
 
 
-# data = pd.read_csv('outputFiles/v1_spectra.csv', index_col=0, engine='c')
+data = pd.read_csv('outputFiles/v1_spectra.csv', index_col=0, engine='c')
 
-# predict_chems(
-#     '/mnt/batch/tasks/shared/LS_root/mounts/clusters/cnls-ds-compute-instance/code/Users/tsuma.thomas/QC_Model_Predictions/dl_models_all_chems_20210414/v2.2',
-#     '/mnt/batch/tasks/shared/LS_root/mounts/clusters/cnls-ds-compute-instance/code/Users/tsuma.thomas/DSML124/outputFiles/predictions',
-#     chemicals,
-#     ['DLv2.2'],
-#     data
-#     )
+predict_chems(
+    '/mnt/batch/tasks/shared/LS_root/mounts/clusters/cnls-ds-compute-instance/code/Users/tsuma.thomas/QC_Model_Predictions/dl_models_all_chems_20210414/v2.2',
+    '/mnt/batch/tasks/shared/LS_root/mounts/clusters/cnls-ds-compute-instance/code/Users/tsuma.thomas/DSML124/outputFiles/predictions',
+    chemicals,
+    ['DLv2.2'],
+    data
+    )
 
 
 # residual_outliers(chemicals)
