@@ -97,7 +97,7 @@ def residual_outliers_reconstructed(chems):
     os.makedirs('outputFiles/PCC2_Classes_Reconstructed', exist_ok=True)
 
     for chem in chems:
-        dl_predictions = pd.read_csv(f"outputFiles/predictions/DLv2.2/{chem}.csv")
+        dl_predictions = pd.read_csv(f"outputFiles/predictions/v2.3/{chem}.csv")
         dl_predictions = dl_predictions.rename(columns={'0':chem})
         
         autoencoded_predictions = pd.read_csv(f"outputFiles/predictions/pcc1_autoencoded/DLv2.2/{chem}.csv")
@@ -118,7 +118,21 @@ def residual_outliers_reconstructed(chems):
         df['Difference'] =  (df['0'] - df[chem]).abs()
 
         # df.to_csv(f"outputFiles/PCC_Classes/{chem}.csv")
-        if(chem in redbooth_outliers_dict.keys()):
+        if chem == 'organic_carbon':
+            df['residual_outlier_limit'] = df[chem].apply(lambda x: 0.2 * x if x > 1.5 else None)
+            df.loc[df[chem] < 1.5, 'residual_outlier_limit'] = 0.3
+            df['Difference'] = abs(df['Difference'])
+            df.loc[df['Difference'] <= df['residual_outlier_limit'],'PCC_Class'] = 1
+            df.loc[df['Difference'] > df['residual_outlier_limit'],'PCC_Class'] = 3
+            df.to_csv(f'outputFiles/PCC1_Classes_Reconstructed/{chem}.csv')
+        elif chem == 'total_nitrogen':
+            df['residual_outlier_limit'] = df[chem].apply(lambda x: 0.2 * x if x > 0.15 else None)
+            df.loc[df[chem] < 0.15, 'residual_outlier_limit'] = 0.03
+            df['Difference'] = abs(df['Difference'])
+            df.loc[df['Difference'] <= df['residual_outlier_limit'],'PCC_Class'] = 1
+            df.loc[df['Difference'] > df['residual_outlier_limit'],'PCC_Class'] = 3
+            df.to_csv(f'outputFiles/PCC1_Classes_Reconstructed/{chem}.csv')
+        elif(chem in redbooth_outliers_dict.keys()):
             lower = redbooth_outliers_dict[chem][0]
             upper = redbooth_outliers_dict[chem][1]
             df.loc[(df['Difference']> lower) & (df['Difference'] < upper), 'PCC_Class'] = 1
@@ -152,9 +166,9 @@ def residual_outliers_reconstructed(chems):
             continue
 
     for chem in chems:
-        dl_predictions = pd.read_csv(f"outputFiles/predictions/DLv2.2/{chem}.csv")
+        dl_predictions = pd.read_csv(f"outputFiles/predictions/v2.3/{chem}.csv")
         dl_predictions = dl_predictions.rename(columns={'0':chem})
-        autoencoded_predictions = pd.read_csv(f"outputFiles/predictions/pcc2_autoencoded/DLv2.2/{chem}.csv")
+        autoencoded_predictions = pd.read_csv(f"outputFiles/predictions/pcc2_autoencoded/v2.3/{chem}.csv")
         if('sample_code' not in dl_predictions.columns):
             dl_predictions = dl_predictions.rename(columns={"Unnamed: 0":'sample_code'})
         if('sample_code' not in autoencoded_predictions.columns):
@@ -167,7 +181,21 @@ def residual_outliers_reconstructed(chems):
         df['Difference'] =  (df['0'] - df[chem]).abs()
 
         # df.to_csv(f"outputFiles/PCC_Classes/{chem}.csv")
-        if(chem in redbooth_outliers_dict.keys()):
+        if chem == 'organic_carbon':
+            df['residual_outlier_limit'] = df[chem].apply(lambda x: 0.2 * x if x > 1.5 else None)
+            df.loc[df[chem] < 1.5, 'residual_outlier_limit'] = 0.3
+            df['Difference'] = abs(df['Difference'])
+            df.loc[df['Difference'] <= df['residual_outlier_limit'],'PCC_Class'] = 1
+            df.loc[df['Difference'] > df['residual_outlier_limit'],'PCC_Class'] = 3
+            df.to_csv(f'outputFiles/PCC2_Classes_Reconstructed/{chem}.csv')
+        elif chem == 'total_nitrogen':
+            df['residual_outlier_limit'] = df[chem].apply(lambda x: 0.2 * x if x > 0.15 else None)
+            df.loc[df[chem] < 0.15, 'residual_outlier_limit'] = 0.03
+            df['Difference'] = abs(df['Difference'])
+            df.loc[df['Difference'] <= df['residual_outlier_limit'],'PCC_Class'] = 1
+            df.loc[df['Difference'] > df['residual_outlier_limit'],'PCC_Class'] = 3
+            df.to_csv(f'outputFiles/PCC2_Classes_Reconstructed/{chem}.csv')
+        elif(chem in redbooth_outliers_dict.keys()):
             lower = redbooth_outliers_dict[chem][0]
             upper = redbooth_outliers_dict[chem][1]
             df.loc[(df['Difference']> lower) & (df['Difference'] < upper), 'PCC_Class'] = 1
@@ -205,13 +233,13 @@ def residual_outliers_reconstructed_wetchem(chems):
     print("Getting residual outliers")
     os.makedirs("outputFiles/PCC1_Wetchem_Reconstructed", exist_ok=True)
     os.makedirs("outputFiles/PCC2_Wetchem_Reconstructed", exist_ok=True)
-    wetchem_df = pd.read_csv("inputFiles/cleaned_wetchem.csv")
+    wetchem_df = pd.read_csv("outputFiles/cleaned_wetchem.csv")
 
     redbooth_outliers_dict, pcc_classes_dict = load_residual_outliers()
 
     for chem in chems:
         wet = wetchem_df.loc[wetchem_df[chem].notnull()]
-        df = pd.read_csv(f"./outputFiles/predictions/pcc1_autoencoded/DLv2.2/{chem}.csv")
+        df = pd.read_csv(f"./outputFiles/predictions/pcc1_autoencoded/v2.3/{chem}.csv")
         df = df.rename(columns={'Unnamed: 0':'sample_code'})
         if('sample_code' not in df.columns):
             df = df.rename(columns={'Unnamed: 0':'sample_code'})
@@ -254,7 +282,7 @@ def residual_outliers_reconstructed_wetchem(chems):
 
     for chem in chems:
         wet = wetchem_df.loc[wetchem_df[chem].notnull()]
-        df = pd.read_csv(f"./outputFiles/predictions/pcc2_autoencoded/DLv2.2/{chem}.csv")
+        df = pd.read_csv(f"./outputFiles/predictions/pcc2_autoencoded/v2.3/{chem}.csv")
         df = df.rename(columns={'Unnamed: 0':'sample_code'})
         if('sample_code' not in df.columns):
             df = df.rename(columns={'sample_id':'sample_code'})
