@@ -44,10 +44,9 @@ chemicals = [
     #   ,'silt', 'clay'
 ]
 
-wetchem = pd.read_csv("outputFiles/cleaned_wetchem.csv",index_col=0)
-print(wetchem.index[0:5])
+wetchem = pd.read_csv("outputFiles/cleaned_wetchem.csv")
+wetchem = wetchem.set_index("sample_code")
 data = pd.read_csv('outputFiles/spectra.csv', index_col=0, engine='c')
-print(data.index[0:5])
 
 data = data.loc[data.index.isin(wetchem.index)]
 
