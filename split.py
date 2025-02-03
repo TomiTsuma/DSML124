@@ -10,11 +10,11 @@ import subprocess
 # r['source']('splits.R')
 # split = robjects.globalenv['split']
 
-# try:
-#     os.makedirs("./outputFiles/splits", exist_ok=True)
-#     os.makedirs("./outputFiles/rds", exist_ok=True)
-# except Exception as e:
-#     print(e)
+try:
+    os.makedirs("./outputFiles/splits", exist_ok=True)
+    os.makedirs("./outputFiles/rds", exist_ok=True)
+except Exception as e:
+    print(e)
 
 
 # pandas2ri.activate()
