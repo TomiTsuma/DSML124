@@ -16,6 +16,7 @@ import logging
 from split import split_spc
 from residual_outliers import residual_outliers, residual_outliers_reconstructed, residual_outliers_reconstructed_wetchem
 from datetime import datetime
+from cosine import getSimilarityMatrix
 
 # from visualizations import pcc2_confusion_matrix, pcc3_confusion_matrix, pcc1_confusion_matrix
 
@@ -159,8 +160,9 @@ for chem in chemicals:
         ['v2.3'],
         pcc3_reconstructed
     )
-
-
+for chem in chemicals:
+    getSimilarityMatrix(type="PCC1", chem=chem)
+    getSimilarityMatrix(type="PCC3", chem=chem)
 
 # residual_outliers_reconstructed(chemicals)
 # residual_outliers_reconstructed_wetchem(chemicals)
