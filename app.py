@@ -45,10 +45,11 @@ chemicals = [
 ]
 
 wetchem = pd.read_csv("outputFiles/cleaned_wetchem.csv",index_col=0)
+print(wetchem.index[0:5])
 data = pd.read_csv('outputFiles/spectra.csv', index_col=0, engine='c')
-data = data.reset_index()
-data = data.loc[data['sample_code'].isin(wetchem.index)]
-data = data.set_index("sample_code")
+print(data.index[0:5])
+
+data = data.loc[data.index.isin(wetchem.index)]
 
 predict_chems(
     '/home/tom/DSML124/QC_Model_Predictions/dl_models_all_chems_20210414/v2.3',

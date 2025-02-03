@@ -128,7 +128,7 @@ def getWetchem(chemicals=["organic_carbon"]):
 
     if "sample_code" not in cn.columns:
         cn = cn.rename(columns={"Unnamed: 0":"sample_code"})
-    for file in Path("/home/tom/DSML125/inputFiles/CN_files").rglob("**/*.csv"):
+    for file in Path("/home/tom/DSML124/inputFiles/CN_files").rglob("**/*.csv"):
         _ = pd.read_csv(file)
         _ = _.reset_index()
         cn= pd.concat([cn, _])
