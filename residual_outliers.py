@@ -7,7 +7,7 @@ from data import load_residual_outliers
 
 def residual_outliers(chems):
     print("Getting residual outliers for preds vs wetchem")
-    spectra = pd.read_csv('outputFiles/v1_spectra.csv', index_col=0, engine='c')
+    spectra = pd.read_csv('outputFiles/spectra.csv', index_col=0, engine='c')
     wetchem_df = pd.read_csv("inputFiles/cleaned_wetchem.csv")
     print(len(wetchem_df))
 
