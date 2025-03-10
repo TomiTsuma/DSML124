@@ -99,7 +99,6 @@ def get_spc():
     spectra = spectra.set_index('sample_code')
     spectra = convertSpectra(spectra)
     spectra.to_csv('outputFiles/spectra.csv')
-# get_spc()
 
 def getWetchem(chemicals=["organic_carbon"]):
     spc = pd.read_csv("outputFiles/spectra.csv",index_col=0)

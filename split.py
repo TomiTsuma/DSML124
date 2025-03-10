@@ -24,7 +24,7 @@ def split_spc(spc_path, rds_path, splits_path, chem, nrows=None):
     os.makedirs(f"outputFiles/PCC1/train", exist_ok=True)
     os.makedirs(f"outputFiles/PCC1/test", exist_ok=True)
     os.makedirs(f"outputFiles/PCC1/validation", exist_ok=True)
-    subprocess.run(['sudo', 'Rscript', '/home/tom/DSML124/splits.r', f'{chem}'])
+    # subprocess.run(['sudo', 'Rscript', '/home/tom/DSML124/splits.r', f'{chem}'])
     # split(spc_path, rds_path, splits_path, chem)
     spc = pd.read_csv(spc_path, index_col=0, engine='c')
 

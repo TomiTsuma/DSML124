@@ -26,3 +26,174 @@
 2025-02-03 12:26:04 - INFO - Denormalization of pcc1
 2025-02-03 12:26:04 - INFO - Denormalization of pcc3
 2025-02-03 12:26:04 - INFO - Saving reconstruted spc
+2025-03-05 12:35:26 - INFO - Training for aluminium
+2025-03-05 12:35:34 - WARNING - `lr` is deprecated in Keras optimizer, please use `learning_rate` or use the legacy optimizer, e.g.,tf.keras.optimizers.legacy.SGD.
+2025-03-05 12:38:08 - INFO - Assets written to: outputFiles/models/aluminium/assets
+2025-03-05 12:38:12 - INFO - Normalization of pcc1
+2025-03-05 12:38:12 - INFO - Normalization of pcc3
+2025-03-05 12:38:12 - INFO - Prediction of pcc1
+2025-03-05 12:38:13 - INFO - Prediction of pcc3
+2025-03-05 12:38:13 - INFO - Denormalization of pcc1
+2025-03-05 12:38:13 - INFO - Denormalization of pcc3
+2025-03-05 12:38:13 - INFO - Saving reconstruted spc
+2025-03-05 13:23:45 - INFO - Training for aluminium
+2025-03-05 13:23:53 - WARNING - `lr` is deprecated in Keras optimizer, please use `learning_rate` or use the legacy optimizer, e.g.,tf.keras.optimizers.legacy.SGD.
+2025-03-05 13:27:29 - INFO - Assets written to: outputFiles/models/aluminium/assets
+2025-03-05 13:27:31 - INFO - Normalization of pcc1
+2025-03-05 13:27:31 - INFO - Normalization of pcc3
+2025-03-05 13:27:31 - INFO - Prediction of pcc1
+2025-03-05 13:27:32 - INFO - Prediction of pcc3
+2025-03-05 13:27:32 - INFO - Denormalization of pcc1
+2025-03-05 13:27:32 - INFO - Denormalization of pcc3
+2025-03-05 13:27:32 - INFO - Saving reconstruted spc
+2025-03-05 13:39:55 - INFO - Training for phosphorus
+2025-03-05 13:42:10 - INFO - Training for aluminium
+2025-03-05 13:42:16 - WARNING - `lr` is deprecated in Keras optimizer, please use `learning_rate` or use the legacy optimizer, e.g.,tf.keras.optimizers.legacy.SGD.
+2025-03-05 13:45:47 - INFO - Assets written to: outputFiles/models/aluminium/assets
+2025-03-05 13:45:50 - INFO - Normalization of pcc1
+2025-03-05 13:45:50 - INFO - Normalization of pcc3
+2025-03-05 13:45:50 - INFO - Prediction of pcc1
+2025-03-05 13:45:51 - INFO - Prediction of pcc3
+2025-03-05 13:45:51 - INFO - Denormalization of pcc1
+2025-03-05 13:45:51 - INFO - Denormalization of pcc3
+2025-03-05 13:45:51 - INFO - Saving reconstruted spc
+2025-03-05 13:59:30 - INFO - Training for phosphorus
+2025-03-05 14:01:03 - WARNING - `lr` is deprecated in Keras optimizer, please use `learning_rate` or use the legacy optimizer, e.g.,tf.keras.optimizers.legacy.SGD.
+2025-03-05 14:31:43 - INFO - Assets written to: outputFiles/models/phosphorus/assets
+2025-03-05 14:32:04 - INFO - Normalization of pcc1
+2025-03-05 14:32:05 - INFO - Normalization of pcc3
+2025-03-05 14:32:05 - INFO - Prediction of pcc1
+2025-03-05 14:32:10 - INFO - Prediction of pcc3
+2025-03-05 14:32:11 - INFO - Denormalization of pcc1
+2025-03-05 14:32:11 - INFO - Denormalization of pcc3
+2025-03-05 14:32:11 - INFO - Saving reconstruted spc
+2025-03-05 14:39:01 - INFO - Training for ph
+2025-03-05 14:39:40 - WARNING - `lr` is deprecated in Keras optimizer, please use `learning_rate` or use the legacy optimizer, e.g.,tf.keras.optimizers.legacy.SGD.
+2025-03-05 14:55:04 - INFO - Assets written to: outputFiles/models/ph/assets
+2025-03-05 14:56:36 - INFO - Normalization of pcc1
+2025-03-05 14:56:36 - INFO - Normalization of pcc3
+2025-03-05 14:56:38 - INFO - Prediction of pcc1
+2025-03-05 14:56:40 - INFO - Prediction of pcc3
+2025-03-05 14:57:00 - INFO - Denormalization of pcc1
+2025-03-05 14:57:00 - INFO - Denormalization of pcc3
+2025-03-05 14:57:01 - INFO - Saving reconstruted spc
+2025-03-05 15:02:00 - INFO - Training for exchangeable_acidity
+2025-03-05 15:02:09 - WARNING - `lr` is deprecated in Keras optimizer, please use `learning_rate` or use the legacy optimizer, e.g.,tf.keras.optimizers.legacy.SGD.
+2025-03-05 15:04:40 - INFO - Assets written to: outputFiles/models/exchangeable_acidity/assets
+2025-03-05 15:04:45 - INFO - Normalization of pcc1
+2025-03-05 15:04:45 - INFO - Normalization of pcc3
+2025-03-05 15:04:46 - INFO - Prediction of pcc1
+2025-03-05 15:04:47 - INFO - Prediction of pcc3
+2025-03-05 15:04:47 - INFO - Denormalization of pcc1
+2025-03-05 15:04:47 - INFO - Denormalization of pcc3
+2025-03-05 15:04:47 - INFO - Saving reconstruted spc
+2025-03-05 15:20:18 - INFO - Training for calcium
+2025-03-05 15:22:06 - WARNING - `lr` is deprecated in Keras optimizer, please use `learning_rate` or use the legacy optimizer, e.g.,tf.keras.optimizers.legacy.SGD.
+2025-03-05 15:44:12 - INFO - Assets written to: outputFiles/models/calcium/assets
+2025-03-05 15:44:33 - INFO - Normalization of pcc1
+2025-03-05 15:44:33 - INFO - Normalization of pcc3
+2025-03-05 15:44:33 - INFO - Prediction of pcc1
+2025-03-05 15:44:38 - INFO - Prediction of pcc3
+2025-03-05 15:44:39 - INFO - Denormalization of pcc1
+2025-03-05 15:44:39 - INFO - Denormalization of pcc3
+2025-03-05 15:44:39 - INFO - Saving reconstruted spc
+2025-03-05 15:58:32 - INFO - Training for sulphur
+2025-03-05 15:59:53 - WARNING - `lr` is deprecated in Keras optimizer, please use `learning_rate` or use the legacy optimizer, e.g.,tf.keras.optimizers.legacy.SGD.
+2025-03-05 17:30:33 - INFO - Assets written to: outputFiles/models/sulphur/assets
+2025-03-05 17:30:50 - INFO - Normalization of pcc1
+2025-03-05 17:30:51 - INFO - Normalization of pcc3
+2025-03-05 17:30:51 - INFO - Prediction of pcc1
+2025-03-05 17:30:55 - INFO - Prediction of pcc3
+2025-03-05 17:30:56 - INFO - Denormalization of pcc1
+2025-03-05 17:30:56 - INFO - Denormalization of pcc3
+2025-03-05 17:30:56 - INFO - Saving reconstruted spc
+2025-03-05 17:45:04 - INFO - Training for sodium
+2025-03-05 17:47:05 - WARNING - `lr` is deprecated in Keras optimizer, please use `learning_rate` or use the legacy optimizer, e.g.,tf.keras.optimizers.legacy.SGD.
+2025-03-05 18:37:50 - INFO - Assets written to: outputFiles/models/sodium/assets
+2025-03-05 18:38:01 - INFO - Normalization of pcc1
+2025-03-05 18:38:01 - INFO - Normalization of pcc3
+2025-03-05 18:38:01 - INFO - Prediction of pcc1
+2025-03-05 18:38:04 - INFO - Prediction of pcc3
+2025-03-05 18:38:04 - INFO - Denormalization of pcc1
+2025-03-05 18:38:04 - INFO - Denormalization of pcc3
+2025-03-05 18:38:04 - INFO - Saving reconstruted spc
+2025-03-05 18:45:10 - INFO - Training for boron
+2025-03-05 18:45:57 - WARNING - `lr` is deprecated in Keras optimizer, please use `learning_rate` or use the legacy optimizer, e.g.,tf.keras.optimizers.legacy.SGD.
+2025-03-05 20:04:29 - INFO - Assets written to: outputFiles/models/boron/assets
+2025-03-05 20:04:39 - INFO - Normalization of pcc1
+2025-03-05 20:04:39 - INFO - Normalization of pcc3
+2025-03-05 20:04:39 - INFO - Prediction of pcc1
+2025-03-05 20:04:42 - INFO - Prediction of pcc3
+2025-03-05 20:04:42 - INFO - Denormalization of pcc1
+2025-03-05 20:04:42 - INFO - Denormalization of pcc3
+2025-03-05 20:04:42 - INFO - Saving reconstruted spc
+2025-03-05 20:12:27 - INFO - Training for copper
+2025-03-05 20:13:16 - WARNING - `lr` is deprecated in Keras optimizer, please use `learning_rate` or use the legacy optimizer, e.g.,tf.keras.optimizers.legacy.SGD.
+2025-03-05 20:34:48 - INFO - Assets written to: outputFiles/models/copper/assets
+2025-03-05 20:34:56 - INFO - Normalization of pcc1
+2025-03-05 20:34:56 - INFO - Normalization of pcc3
+2025-03-05 20:34:56 - INFO - Prediction of pcc1
+2025-03-05 20:34:59 - INFO - Prediction of pcc3
+2025-03-05 20:35:00 - INFO - Denormalization of pcc1
+2025-03-05 20:35:00 - INFO - Denormalization of pcc3
+2025-03-05 20:35:00 - INFO - Saving reconstruted spc
+2025-03-05 20:42:13 - INFO - Training for zinc
+2025-03-05 20:43:03 - WARNING - `lr` is deprecated in Keras optimizer, please use `learning_rate` or use the legacy optimizer, e.g.,tf.keras.optimizers.legacy.SGD.
+2025-03-05 21:02:37 - INFO - Assets written to: outputFiles/models/zinc/assets
+2025-03-05 21:02:47 - INFO - Normalization of pcc1
+2025-03-05 21:02:47 - INFO - Normalization of pcc3
+2025-03-05 21:02:47 - INFO - Prediction of pcc1
+2025-03-05 21:02:50 - INFO - Prediction of pcc3
+2025-03-05 21:02:51 - INFO - Denormalization of pcc1
+2025-03-05 21:02:51 - INFO - Denormalization of pcc3
+2025-03-05 21:02:51 - INFO - Saving reconstruted spc
+2025-03-05 21:11:55 - INFO - Training for potassium
+2025-03-05 21:12:51 - WARNING - `lr` is deprecated in Keras optimizer, please use `learning_rate` or use the legacy optimizer, e.g.,tf.keras.optimizers.legacy.SGD.
+2025-03-05 21:37:38 - INFO - Assets written to: outputFiles/models/potassium/assets
+2025-03-05 21:37:48 - INFO - Normalization of pcc1
+2025-03-05 21:37:48 - INFO - Normalization of pcc3
+2025-03-05 21:37:48 - INFO - Prediction of pcc1
+2025-03-05 21:37:50 - INFO - Prediction of pcc3
+2025-03-05 21:37:50 - INFO - Denormalization of pcc1
+2025-03-05 21:37:50 - INFO - Denormalization of pcc3
+2025-03-05 21:37:50 - INFO - Saving reconstruted spc
+2025-03-05 21:44:53 - INFO - Training for cec
+2025-03-05 21:45:45 - WARNING - `lr` is deprecated in Keras optimizer, please use `learning_rate` or use the legacy optimizer, e.g.,tf.keras.optimizers.legacy.SGD.
+2025-03-05 22:03:15 - INFO - Assets written to: outputFiles/models/cec/assets
+2025-03-05 22:03:23 - INFO - Normalization of pcc1
+2025-03-05 22:03:24 - INFO - Normalization of pcc3
+2025-03-05 22:03:24 - INFO - Prediction of pcc1
+2025-03-05 22:03:26 - INFO - Prediction of pcc3
+2025-03-05 22:03:26 - INFO - Denormalization of pcc1
+2025-03-05 22:03:26 - INFO - Denormalization of pcc3
+2025-03-05 22:03:26 - INFO - Saving reconstruted spc
+2025-03-05 22:04:50 - INFO - Training for sand
+2025-03-05 22:04:56 - WARNING - `lr` is deprecated in Keras optimizer, please use `learning_rate` or use the legacy optimizer, e.g.,tf.keras.optimizers.legacy.SGD.
+2025-03-05 22:08:07 - INFO - Assets written to: outputFiles/models/sand/assets
+2025-03-05 22:08:08 - INFO - Normalization of pcc1
+2025-03-05 22:08:08 - INFO - Normalization of pcc3
+2025-03-05 22:08:08 - INFO - Prediction of pcc1
+2025-03-05 22:08:09 - INFO - Prediction of pcc3
+2025-03-05 22:08:09 - INFO - Denormalization of pcc1
+2025-03-05 22:08:09 - INFO - Denormalization of pcc3
+2025-03-05 22:08:09 - INFO - Saving reconstruted spc
+2025-03-05 22:09:04 - INFO - Training for silt
+2025-03-05 22:09:10 - WARNING - `lr` is deprecated in Keras optimizer, please use `learning_rate` or use the legacy optimizer, e.g.,tf.keras.optimizers.legacy.SGD.
+2025-03-05 22:12:59 - INFO - Assets written to: outputFiles/models/silt/assets
+2025-03-05 22:13:02 - INFO - Normalization of pcc1
+2025-03-05 22:13:02 - INFO - Normalization of pcc3
+2025-03-05 22:13:02 - INFO - Prediction of pcc1
+2025-03-05 22:13:02 - INFO - Prediction of pcc3
+2025-03-05 22:13:02 - INFO - Denormalization of pcc1
+2025-03-05 22:13:02 - INFO - Denormalization of pcc3
+2025-03-05 22:13:02 - INFO - Saving reconstruted spc
+2025-03-05 22:14:03 - INFO - Training for clay
+2025-03-05 22:14:10 - WARNING - `lr` is deprecated in Keras optimizer, please use `learning_rate` or use the legacy optimizer, e.g.,tf.keras.optimizers.legacy.SGD.
+2025-03-05 22:17:10 - INFO - Assets written to: outputFiles/models/clay/assets
+2025-03-05 22:17:12 - INFO - Normalization of pcc1
+2025-03-05 22:17:12 - INFO - Normalization of pcc3
+2025-03-05 22:17:12 - INFO - Prediction of pcc1
+2025-03-05 22:17:12 - INFO - Prediction of pcc3
+2025-03-05 22:17:12 - INFO - Denormalization of pcc1
+2025-03-05 22:17:12 - INFO - Denormalization of pcc3
+2025-03-05 22:17:12 - INFO - Saving reconstruted spc

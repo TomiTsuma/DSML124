@@ -17,7 +17,7 @@ from split import split_spc
 from residual_outliers import residual_outliers, residual_outliers_reconstructed, residual_outliers_reconstructed_wetchem
 from datetime import datetime
 from cosine import getSimilarityMatrix
-
+from data import get_spc, getWetchem
 # from visualizations import pcc2_confusion_matrix, pcc3_confusion_matrix, pcc1_confusion_matrix
 
 
@@ -33,28 +33,30 @@ logging.getLogger().handlers = [handler]
 
 
 chemicals = [
-    # 'aluminium'
-    # 'phosphorus',
-    # 'ph',
-    # 'exchangeable_acidity',
-    #  'calcium',
-    # 'magnesium',
-    # 'sulphur', 
-    # 'sodium',
-    # 'iron', 
-    # 'manganese',
-    # 'boron', 
-    # 'copper', 
-    # 'zinc', 
+    'aluminium',
+    'phosphorus',
+    'ph',
+    'exchangeable_acidity',
+     'calcium',
+    'magnesium',
+    'sulphur', 
+    'sodium',
+    'iron', 
+    'manganese',
+    'boron', 
+    'copper', 
+    'zinc', 
     # 'total_nitrogen', 
-    # 'potassium',
-    # 'ec_salts', 
-    'organic_carbon'
-    # , 'cec',
-    #  'sand'
-    #   ,'silt', 'clay'
+    'potassium',
+    'ec_salts', 
+    # 'organic_carbon', 
+    'cec',
+    'sand',
+    'silt', 'clay'
 ]
-
+chemicals = [ i for i in chemicals if i in os.listdir("/home/tom/DSML124/QC_Model_Predictions/dl_models_all_chems_20210414/v2.3")]
+# get_spc()
+# getWetchem(chemicals)
 # wetchem = pd.read_csv("outputFiles/cleaned_wetchem.csv")
 # wetchem = wetchem.set_index("sample_code")
 # data = pd.read_csv('outputFiles/spectra.csv', index_col=0, engine='c')
@@ -71,14 +73,25 @@ chemicals = [
 
 
 # residual_outliers(chemicals, "v2.3")
+# for chem in chemicals:
+#     spc_tmp = pd.read_csv(f"{os.getcwd()}/outputFiles/PCC1/{chem}.csv",engine='c',index_col=0)
+#     spc_tmp = spc_tmp.set_index([ i.strip() for i in spc_tmp.index ])
+#     print(spc_tmp.index[0:5])
+#     print("Len b4 dropping duplicates",len(spc_tmp))
+#     spc_tmp = spc_tmp[~spc_tmp.index.duplicated(keep='first')]
+#     print("Len after dropping duplicates",len(spc_tmp))
+#     spc_tmp.to_csv(f"{os.getcwd()}/outputFiles/PCC1/{chem}.csv")
+
+
+# subprocess.run(["sudo","bash","/home/tom/DSML124/split_data.sh"])
 
 for chem in chemicals:
 
     print(chem)
 
-    # split_spc(f"{os.getcwd()}/outputFiles/PCC1/{chem}.csv", f"{os.getcwd()}/outputFiles/rds", f"{os.getcwd()}/outputFiles/splits", chem)
-    # logging.info(f'Training for {chem}')
-    # model = run(chem)
+    split_spc(f"{os.getcwd()}/outputFiles/PCC1/{chem}.csv", f"{os.getcwd()}/outputFiles/rds", f"{os.getcwd()}/outputFiles/splits", chem)
+    logging.info(f'Training for {chem}')
+    model = run(chem)
     model = load_model(f'{os.getcwd()}/outputFiles/models/{chem}')
 
 
@@ -132,37 +145,37 @@ for chem in chemicals:
     pcc2_predictions.to_csv(f'outputFiles/pcc3_reconstructed_spc/{chem}.csv')
 
 
-for chem in chemicals:
-    print(chem)
-    os.makedirs(f"outputFiles/predictions/pcc1_autoencoded", exist_ok=True)
-    os.makedirs(f"outputFiles/predictions/pcc3_autoencoded", exist_ok=True)
+# for chem in chemicals:
+#     print(chem)
+#     os.makedirs(f"outputFiles/predictions/pcc1_autoencoded", exist_ok=True)
+#     os.makedirs(f"outputFiles/predictions/pcc3_autoencoded", exist_ok=True)
 
-    pcc1_reconstructed = pd.read_csv(
-        f'outputFiles/pcc1_reconstructed_spc/{chem}.csv', index_col=0)
-    pcc3_reconstructed = pd.read_csv(
-        f'outputFiles/pcc3_reconstructed_spc/{chem}.csv', index_col=0)
+#     pcc1_reconstructed = pd.read_csv(
+#         f'outputFiles/pcc1_reconstructed_spc/{chem}.csv', index_col=0)
+#     pcc3_reconstructed = pd.read_csv(
+#         f'outputFiles/pcc3_reconstructed_spc/{chem}.csv', index_col=0)
 
-    print(len(pcc1_reconstructed))
-    print(len(pcc3_reconstructed))
+#     print(len(pcc1_reconstructed))
+#     print(len(pcc3_reconstructed))
 
-    predict_chems(
-        '/home/tom/DSML124/QC_Model_Predictions/dl_models_all_chems_20210414/v2.3',
-        f'outputFiles/predictions/pcc1_autoencoded',
-        [chem],
-        ['v2.3'],
-        pcc1_reconstructed
-    )
+#     predict_chems(
+#         '/home/tom/DSML124/QC_Model_Predictions/dl_models_all_chems_20210414/v2.3',
+#         f'outputFiles/predictions/pcc1_autoencoded',
+#         [chem],
+#         ['v2.3'],
+#         pcc1_reconstructed
+#     )
 
-    predict_chems(
-        '/home/tom/DSML124/QC_Model_Predictions/dl_models_all_chems_20210414/v2.3',
-        f'outputFiles/predictions/pcc2_autoencoded',
-        [chem],
-        ['v2.3'],
-        pcc3_reconstructed
-    )
-for chem in chemicals:
-    getSimilarityMatrix(type="PCC1", chem=chem)
-    getSimilarityMatrix(type="PCC3", chem=chem)
+#     predict_chems(
+#         '/home/tom/DSML124/QC_Model_Predictions/dl_models_all_chems_20210414/v2.3',
+#         f'outputFiles/predictions/pcc2_autoencoded',
+#         [chem],
+#         ['v2.3'],
+#         pcc3_reconstructed
+#     )
+# for chem in chemicals:
+#     getSimilarityMatrix(type="PCC1", chem=chem)
+#     getSimilarityMatrix(type="PCC3", chem=chem)
 
 # residual_outliers_reconstructed(chemicals)
 # residual_outliers_reconstructed_wetchem(chemicals)
