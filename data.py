@@ -24,6 +24,29 @@ def get_db_cursor():
     return conn, cur
 conn, cur = get_db_cursor()
 
+def getSixMonthsData():
+    query = f"""SELECT spectraldata.metadata_id, averaged_spectra, mandatorymetadata.sample_code  
+        FROM spectraldata 
+        INNER JOIN mandatorymetadata 
+        ON mandatorymetadata.metadata_id = spectraldata.metadata_id 
+        WHERE 
+        is_finalized=True AND 
+        passed=True AND 
+        is_active=True AND 
+        averaged=True AND 
+        mandatorymetadata.sensor_id = 1 AND  
+        mandatorymetadata.sample_type_id = 1 AND
+        mandatorymetadata.sample_pretreatment_id = 1 AND
+        mandatorymetadata.timestamp > '2024-09-01'
+    """
+    spc = pd.read_sql(query, con=conn)
+    conn.close()
+    spc = spc[['sample_code', 'averaged_spectra']]
+    spc = spc.set_index('sample_code')
+    spc = convertSpectra(spc)
+    spc.to_csv('outputFiles/6monthsspc.csv')
+
+
 def convertSpectra(df):
     print("Converting spectra")
     df_ = pd.DataFrame([i[[i for i in i.keys()][0]] for i in df['averaged_spectra'].values],columns = np.arange(522,3977,2))
@@ -279,3 +302,4 @@ def load_residual_outliers(chemicals=['organic_carbon']):
     return redbooth_outliers, pcc_dict
 
 # load_residual_outliers()
+# getSixMonthsData()
