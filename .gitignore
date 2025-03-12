@@ -7,7 +7,7 @@
 *.amltmp
 *copy
 /.dvc/
-
+credentials.json
 /DSML87/
 /DSML94/
 /MSSC_DVC/
