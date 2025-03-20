@@ -15,3 +15,5 @@ credentials.json
 .python_packages
 __pycache__
 .venv
+credentials.json
+credentials.txt

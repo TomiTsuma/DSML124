@@ -50,8 +50,9 @@ def convertSpectra(df):
     return df_
 
 def getSpectralCodes():
-    yesterday = datetime.now() - timedelta(1)
+    yesterday = datetime.now() - timedelta(days=90)
     yesterday = yesterday.strftime('%Y-%m-%d')
+    print(yesterday)
     query = f"""
     SELECT DISTINCT mandatorymetadata.sample_code  
     FROM spectraldata 
@@ -65,16 +66,18 @@ def getSpectralCodes():
     mandatorymetadata.sensor_id = 1 AND  
     mandatorymetadata.sample_type_id = 1 AND
     mandatorymetadata.sample_pretreatment_id = 1 AND
-    mandatorymetadata.timestamp > {yesterday}
-    LIMIT 2
+    mandatorymetadata.timestamp > '{yesterday}'
     """
+    cn_samples = pd.read_csv("/home/tom/DSML124/inputFiles/CN_files/2024-12-12 input for modelling (n_7164) (2).csv",index_col=0).index
+    samples = pd.read_sql(query, con=conn)['sample_code'].tolist()
+    samples.extend([ i for i in cn_samples])
 
-    return pd.read_sql(query, con=conn)
+    return samples
 
 
 def get_spc():
     
-    sample_codes = getSpectralCodes()['sample_code'].tolist()
+    sample_codes = getSpectralCodes()
     spectra = pd.DataFrame(columns=['sample_code','averaged_spectra'])
 
     if(len(sample_codes) < 5000):
@@ -121,9 +124,13 @@ def get_spc():
     spectra = spectra[['sample_code', 'averaged_spectra']]
     spectra = spectra.set_index('sample_code')
     spectra = convertSpectra(spectra)
+    return spectra
 
-spc = pd.read_csv("outputFiles/6monthsspc.csv",index_col=0)
+# spc = get_spc()
+# spc.to_csv("test/spc.csv")
+spc=pd.read_csv("test/spc.csv",index_col=0,engine='c')
 
+print(len(spc))
 def dataframe_to_dict(df):
     return df.apply(lambda row: row.tolist(), axis=1).to_dict()
 
@@ -210,7 +217,7 @@ def spetral_outliers(req):
 
     # Email details
     receiver_email = "tsuma.thomas@cropnuts.com"
-    subject = "Spectral Outliners"
+    subject = "Spectral Outliers"
     body = f"Here is the link to the spectral outliers: {spreadsheet_url}"
 
     # Create email message
